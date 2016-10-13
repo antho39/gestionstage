@@ -79,5 +79,12 @@ namespace gestionstage.Forms
             formModifyEntreprise.Show();
             this.Close();
         }
+
+        private void mTESTViewEntreprise_Click(object sender, EventArgs e)
+        {
+            ViewEntreprise formViewEntreprise = new ViewEntreprise();
+            formViewEntreprise.Show();
+            this.Close();
+        }
     }
 }

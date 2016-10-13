@@ -21,5 +21,13 @@ namespace gestionstage.Forms
             this.StyleManager = mSMViewEntreprise;
             this.StyleManager.Style = (MetroFramework.MetroColorStyle)Settings.Default.Style;
         }
+
+        private void mLinkBack_Click(object sender, EventArgs e)
+        {
+            //TODO : Changer pour la page précédente (ViewEntreprise)
+            ListEntreprise formBack = new ListEntreprise();
+            formBack.Show();
+            this.Close();
+        }
     }
 }

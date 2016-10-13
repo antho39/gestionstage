@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mLabelEntrepriseName = new MetroFramework.Controls.MetroLabel();
-            this.mTxBEntrepriseName = new MetroFramework.Controls.MetroTextBox();
             this.mSMAddEntreprise = new MetroFramework.Components.MetroStyleManager(this.components);
             this.mTxBEntrepriseAdresse = new MetroFramework.Controls.MetroTextBox();
             this.mLabelEntrepriseAdresse = new MetroFramework.Controls.MetroLabel();
@@ -47,6 +46,7 @@
             this.mLabelEntrepriseSiret = new MetroFramework.Controls.MetroLabel();
             this.mLabelTitle = new MetroFramework.Controls.MetroLabel();
             this.mLinkBack = new MetroFramework.Controls.MetroLink();
+            this.mTxBEntrepriseName = new MetroFramework.Controls.MetroTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.mSMAddEntreprise)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,38 +61,6 @@
             this.mLabelEntrepriseName.TabIndex = 0;
             this.mLabelEntrepriseName.Text = "Nom : ";
             // 
-            // mTxBEntrepriseName
-            // 
-            this.mTxBEntrepriseName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            // 
-            // 
-            // 
-            this.mTxBEntrepriseName.CustomButton.Image = null;
-            this.mTxBEntrepriseName.CustomButton.Location = new System.Drawing.Point(807, 1);
-            this.mTxBEntrepriseName.CustomButton.Name = "";
-            this.mTxBEntrepriseName.CustomButton.Size = new System.Drawing.Size(21, 21);
-            this.mTxBEntrepriseName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.mTxBEntrepriseName.CustomButton.TabIndex = 1;
-            this.mTxBEntrepriseName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.mTxBEntrepriseName.CustomButton.UseSelectable = true;
-            this.mTxBEntrepriseName.CustomButton.Visible = false;
-            this.mTxBEntrepriseName.Lines = new string[0];
-            this.mTxBEntrepriseName.Location = new System.Drawing.Point(175, 110);
-            this.mTxBEntrepriseName.MaxLength = 32767;
-            this.mTxBEntrepriseName.Name = "mTxBEntrepriseName";
-            this.mTxBEntrepriseName.PasswordChar = '\0';
-            this.mTxBEntrepriseName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.mTxBEntrepriseName.SelectedText = "";
-            this.mTxBEntrepriseName.SelectionLength = 0;
-            this.mTxBEntrepriseName.SelectionStart = 0;
-            this.mTxBEntrepriseName.ShortcutsEnabled = true;
-            this.mTxBEntrepriseName.Size = new System.Drawing.Size(829, 25);
-            this.mTxBEntrepriseName.TabIndex = 1;
-            this.mTxBEntrepriseName.UseSelectable = true;
-            this.mTxBEntrepriseName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.mTxBEntrepriseName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            // 
             // mSMAddEntreprise
             // 
             this.mSMAddEntreprise.Owner = this;
@@ -106,9 +74,9 @@
             // 
             // 
             this.mTxBEntrepriseAdresse.CustomButton.Image = null;
-            this.mTxBEntrepriseAdresse.CustomButton.Location = new System.Drawing.Point(807, 1);
+            this.mTxBEntrepriseAdresse.CustomButton.Location = new System.Drawing.Point(805, 1);
             this.mTxBEntrepriseAdresse.CustomButton.Name = "";
-            this.mTxBEntrepriseAdresse.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTxBEntrepriseAdresse.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.mTxBEntrepriseAdresse.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.mTxBEntrepriseAdresse.CustomButton.TabIndex = 1;
             this.mTxBEntrepriseAdresse.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -149,9 +117,9 @@
             // 
             // 
             this.mTxBEntreprisePostalCode.CustomButton.Image = null;
-            this.mTxBEntreprisePostalCode.CustomButton.Location = new System.Drawing.Point(807, 1);
+            this.mTxBEntreprisePostalCode.CustomButton.Location = new System.Drawing.Point(805, 1);
             this.mTxBEntreprisePostalCode.CustomButton.Name = "";
-            this.mTxBEntreprisePostalCode.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTxBEntreprisePostalCode.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.mTxBEntreprisePostalCode.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.mTxBEntreprisePostalCode.CustomButton.TabIndex = 1;
             this.mTxBEntreprisePostalCode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -192,9 +160,9 @@
             // 
             // 
             this.mTxBEntrepriseCity.CustomButton.Image = null;
-            this.mTxBEntrepriseCity.CustomButton.Location = new System.Drawing.Point(807, 1);
+            this.mTxBEntrepriseCity.CustomButton.Location = new System.Drawing.Point(805, 1);
             this.mTxBEntrepriseCity.CustomButton.Name = "";
-            this.mTxBEntrepriseCity.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTxBEntrepriseCity.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.mTxBEntrepriseCity.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.mTxBEntrepriseCity.CustomButton.TabIndex = 1;
             this.mTxBEntrepriseCity.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -235,9 +203,9 @@
             // 
             // 
             this.mTxBEntrepriseTelephone.CustomButton.Image = null;
-            this.mTxBEntrepriseTelephone.CustomButton.Location = new System.Drawing.Point(807, 1);
+            this.mTxBEntrepriseTelephone.CustomButton.Location = new System.Drawing.Point(805, 1);
             this.mTxBEntrepriseTelephone.CustomButton.Name = "";
-            this.mTxBEntrepriseTelephone.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTxBEntrepriseTelephone.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.mTxBEntrepriseTelephone.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.mTxBEntrepriseTelephone.CustomButton.TabIndex = 1;
             this.mTxBEntrepriseTelephone.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -278,9 +246,9 @@
             // 
             // 
             this.mTxBEntrepriseEmail.CustomButton.Image = null;
-            this.mTxBEntrepriseEmail.CustomButton.Location = new System.Drawing.Point(807, 1);
+            this.mTxBEntrepriseEmail.CustomButton.Location = new System.Drawing.Point(805, 1);
             this.mTxBEntrepriseEmail.CustomButton.Name = "";
-            this.mTxBEntrepriseEmail.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTxBEntrepriseEmail.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.mTxBEntrepriseEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.mTxBEntrepriseEmail.CustomButton.TabIndex = 1;
             this.mTxBEntrepriseEmail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -335,9 +303,9 @@
             // 
             // 
             this.mTxBEntrepriseSiret.CustomButton.Image = null;
-            this.mTxBEntrepriseSiret.CustomButton.Location = new System.Drawing.Point(807, 1);
+            this.mTxBEntrepriseSiret.CustomButton.Location = new System.Drawing.Point(805, 1);
             this.mTxBEntrepriseSiret.CustomButton.Name = "";
-            this.mTxBEntrepriseSiret.CustomButton.Size = new System.Drawing.Size(21, 21);
+            this.mTxBEntrepriseSiret.CustomButton.Size = new System.Drawing.Size(23, 23);
             this.mTxBEntrepriseSiret.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.mTxBEntrepriseSiret.CustomButton.TabIndex = 1;
             this.mTxBEntrepriseSiret.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -396,6 +364,38 @@
             this.mLinkBack.UseSelectable = true;
             this.mLinkBack.Click += new System.EventHandler(this.mLinkBack_Click);
             // 
+            // mTxBEntrepriseName
+            // 
+            this.mTxBEntrepriseName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.mTxBEntrepriseName.CustomButton.Image = null;
+            this.mTxBEntrepriseName.CustomButton.Location = new System.Drawing.Point(805, 1);
+            this.mTxBEntrepriseName.CustomButton.Name = "";
+            this.mTxBEntrepriseName.CustomButton.Size = new System.Drawing.Size(23, 23);
+            this.mTxBEntrepriseName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTxBEntrepriseName.CustomButton.TabIndex = 1;
+            this.mTxBEntrepriseName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTxBEntrepriseName.CustomButton.UseSelectable = true;
+            this.mTxBEntrepriseName.CustomButton.Visible = false;
+            this.mTxBEntrepriseName.Lines = new string[0];
+            this.mTxBEntrepriseName.Location = new System.Drawing.Point(175, 110);
+            this.mTxBEntrepriseName.MaxLength = 32767;
+            this.mTxBEntrepriseName.Name = "mTxBEntrepriseName";
+            this.mTxBEntrepriseName.PasswordChar = '\0';
+            this.mTxBEntrepriseName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTxBEntrepriseName.SelectedText = "";
+            this.mTxBEntrepriseName.SelectionLength = 0;
+            this.mTxBEntrepriseName.SelectionStart = 0;
+            this.mTxBEntrepriseName.ShortcutsEnabled = true;
+            this.mTxBEntrepriseName.Size = new System.Drawing.Size(829, 25);
+            this.mTxBEntrepriseName.TabIndex = 1;
+            this.mTxBEntrepriseName.UseSelectable = true;
+            this.mTxBEntrepriseName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTxBEntrepriseName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // AddEntreprise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,7 +430,6 @@
         #endregion
 
         private MetroFramework.Controls.MetroLabel mLabelEntrepriseName;
-        private MetroFramework.Controls.MetroTextBox mTxBEntrepriseName;
         private MetroFramework.Components.MetroStyleManager mSMAddEntreprise;
         private MetroFramework.Controls.MetroTextBox mTxBEntrepriseAdresse;
         private MetroFramework.Controls.MetroLabel mLabelEntrepriseAdresse;
@@ -447,5 +446,6 @@
         private MetroFramework.Controls.MetroLabel mLabelEntrepriseSiret;
         private MetroFramework.Controls.MetroLink mLinkBack;
         private MetroFramework.Controls.MetroLabel mLabelTitle;
+        private MetroFramework.Controls.MetroTextBox mTxBEntrepriseName;
     }
 }

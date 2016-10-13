@@ -43,9 +43,10 @@
             this.mTBSearch = new MetroFramework.Controls.MetroTextBox();
             this.mMenu = new MetroFramework.Controls.MetroTabControl();
             this.mMenuTEST = new MetroFramework.Controls.MetroTabPage();
-            this.mTestAddContrat = new MetroFramework.Controls.MetroTile();
-            this.mTESTAddEntreprise = new MetroFramework.Controls.MetroTile();
             this.mTESTModifyEntreprise = new MetroFramework.Controls.MetroTile();
+            this.mTESTAddEntreprise = new MetroFramework.Controls.MetroTile();
+            this.mTestAddContrat = new MetroFramework.Controls.MetroTile();
+            this.mTESTViewEntreprise = new MetroFramework.Controls.MetroTile();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -258,6 +259,7 @@
             // 
             // mMenuTEST
             // 
+            this.mMenuTEST.Controls.Add(this.mTESTViewEntreprise);
             this.mMenuTEST.Controls.Add(this.mTESTModifyEntreprise);
             this.mMenuTEST.Controls.Add(this.mTESTAddEntreprise);
             this.mMenuTEST.Controls.Add(this.mTestAddContrat);
@@ -273,19 +275,19 @@
             this.mMenuTEST.VerticalScrollbarHighlightOnWheel = false;
             this.mMenuTEST.VerticalScrollbarSize = 10;
             // 
-            // mTestAddContrat
+            // mTESTModifyEntreprise
             // 
-            this.mTestAddContrat.ActiveControl = null;
-            this.mTestAddContrat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.mTESTModifyEntreprise.ActiveControl = null;
+            this.mTESTModifyEntreprise.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mTestAddContrat.Location = new System.Drawing.Point(3, 3);
-            this.mTestAddContrat.Name = "mTestAddContrat";
-            this.mTestAddContrat.Size = new System.Drawing.Size(962, 50);
-            this.mTestAddContrat.TabIndex = 2;
-            this.mTestAddContrat.Text = "AddContrat";
-            this.mTestAddContrat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mTestAddContrat.UseSelectable = true;
-            this.mTestAddContrat.Click += new System.EventHandler(this.mTestAddContrat_Click);
+            this.mTESTModifyEntreprise.Location = new System.Drawing.Point(3, 173);
+            this.mTESTModifyEntreprise.Name = "mTESTModifyEntreprise";
+            this.mTESTModifyEntreprise.Size = new System.Drawing.Size(962, 50);
+            this.mTESTModifyEntreprise.TabIndex = 4;
+            this.mTESTModifyEntreprise.Text = "ModifyEntreprise";
+            this.mTESTModifyEntreprise.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mTESTModifyEntreprise.UseSelectable = true;
+            this.mTESTModifyEntreprise.Click += new System.EventHandler(this.mTESTModifyEntreprise_Click);
             // 
             // mTESTAddEntreprise
             // 
@@ -301,19 +303,33 @@
             this.mTESTAddEntreprise.UseSelectable = true;
             this.mTESTAddEntreprise.Click += new System.EventHandler(this.mTESTAddEntreprise_Click);
             // 
-            // mTESTModifyEntreprise
+            // mTestAddContrat
             // 
-            this.mTESTModifyEntreprise.ActiveControl = null;
-            this.mTESTModifyEntreprise.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.mTestAddContrat.ActiveControl = null;
+            this.mTestAddContrat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mTESTModifyEntreprise.Location = new System.Drawing.Point(3, 173);
-            this.mTESTModifyEntreprise.Name = "mTESTModifyEntreprise";
-            this.mTESTModifyEntreprise.Size = new System.Drawing.Size(962, 50);
-            this.mTESTModifyEntreprise.TabIndex = 4;
-            this.mTESTModifyEntreprise.Text = "ModifyEntreprise";
-            this.mTESTModifyEntreprise.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mTESTModifyEntreprise.UseSelectable = true;
-            this.mTESTModifyEntreprise.Click += new System.EventHandler(this.mTESTModifyEntreprise_Click);
+            this.mTestAddContrat.Location = new System.Drawing.Point(3, 3);
+            this.mTestAddContrat.Name = "mTestAddContrat";
+            this.mTestAddContrat.Size = new System.Drawing.Size(962, 50);
+            this.mTestAddContrat.TabIndex = 2;
+            this.mTestAddContrat.Text = "AddContrat";
+            this.mTestAddContrat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mTestAddContrat.UseSelectable = true;
+            this.mTestAddContrat.Click += new System.EventHandler(this.mTestAddContrat_Click);
+            // 
+            // mTESTViewEntreprise
+            // 
+            this.mTESTViewEntreprise.ActiveControl = null;
+            this.mTESTViewEntreprise.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mTESTViewEntreprise.Location = new System.Drawing.Point(3, 258);
+            this.mTESTViewEntreprise.Name = "mTESTViewEntreprise";
+            this.mTESTViewEntreprise.Size = new System.Drawing.Size(962, 50);
+            this.mTESTViewEntreprise.TabIndex = 5;
+            this.mTESTViewEntreprise.Text = "ViewEntreprise";
+            this.mTESTViewEntreprise.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mTESTViewEntreprise.UseSelectable = true;
+            this.mTESTViewEntreprise.Click += new System.EventHandler(this.mTESTViewEntreprise_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -331,16 +347,19 @@
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Afficher";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Modifier";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Supprimer";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // ListEntreprise
             // 
@@ -377,6 +396,7 @@
         private MetroFramework.Controls.MetroTile mTestAddContrat;
         private MetroFramework.Controls.MetroTile mTESTAddEntreprise;
         private MetroFramework.Controls.MetroTile mTESTModifyEntreprise;
+        private MetroFramework.Controls.MetroTile mTESTViewEntreprise;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
