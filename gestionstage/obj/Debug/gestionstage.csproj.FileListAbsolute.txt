@@ -40,3 +40,6 @@ D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\
 D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.csproj.GenerateResource.Cache
 D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.exe
 D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.pdb
+D:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\gestionstage.exe.config
+D:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.exe
+D:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.pdb
