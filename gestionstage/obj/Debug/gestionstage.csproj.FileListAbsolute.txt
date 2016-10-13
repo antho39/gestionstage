@@ -1,0 +1,42 @@
+L:\gestionstage\gestionstage\bin\Debug\gestionstage.exe.config
+L:\gestionstage\gestionstage\obj\Debug\gestionstage.exe
+L:\gestionstage\gestionstage\obj\Debug\gestionstage.pdb
+L:\gestionstage\gestionstage\bin\Debug\gestionstage.exe
+L:\gestionstage\gestionstage\bin\Debug\gestionstage.pdb
+L:\gestionstage\gestionstage\obj\Debug\gestionstage.csprojResolveAssemblyReference.cache
+L:\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.AddEntreprise.resources
+L:\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ListEntreprise.resources
+L:\gestionstage\gestionstage\obj\Debug\gestionstage.Properties.Resources.resources
+L:\gestionstage\gestionstage\obj\Debug\gestionstage.csproj.GenerateResource.Cache
+L:\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.AddContrat.resources
+L:\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ModifyEntreprise.resources
+L:\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ViewEntreprise.resources
+E:\gestionstage\gestionstage\bin\Debug\gestionstage.exe.config
+E:\gestionstage\gestionstage\obj\Debug\gestionstage.exe
+E:\gestionstage\gestionstage\obj\Debug\gestionstage.pdb
+E:\gestionstage\gestionstage\bin\Debug\gestionstage.exe
+E:\gestionstage\gestionstage\bin\Debug\gestionstage.pdb
+E:\gestionstage\gestionstage\obj\Debug\gestionstage.csprojResolveAssemblyReference.cache
+E:\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.AddContrat.resources
+E:\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.AddEntreprise.resources
+E:\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ListEntreprise.resources
+E:\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ModifyEntreprise.resources
+E:\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ViewEntreprise.resources
+E:\gestionstage\gestionstage\obj\Debug\gestionstage.Properties.Resources.resources
+E:\gestionstage\gestionstage\obj\Debug\gestionstage.csproj.GenerateResource.Cache
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\bin\Debug\gestionstage.exe.config
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\bin\Debug\gestionstage.exe
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\bin\Debug\gestionstage.pdb
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\bin\Debug\MetroFramework.Design.dll
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\bin\Debug\MetroFramework.dll
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\bin\Debug\MetroFramework.Fonts.dll
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\bin\Debug\MySql.Data.dll
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.AddContrat.resources
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.AddEntreprise.resources
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ListEntreprise.resources
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ModifyEntreprise.resources
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ViewEntreprise.resources
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.Properties.Resources.resources
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.csproj.GenerateResource.Cache
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.exe
+D:\Ikikay\Documents\Visual Studio 2015\Projects\SIO 2\gestionstage\gestionstage\obj\Debug\gestionstage.pdb
