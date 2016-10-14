@@ -13,11 +13,14 @@ using gestionstage.Properties;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
+using gestionstage.Dao;
 
 namespace gestionstage.Forms
 {
     public partial class ListEntreprise : MetroFramework.Forms.MetroForm
     {
+        private BindingSource bindingSListEntreprise = new BindingSource();
+
         public ListEntreprise()
         {
             InitializeComponent();
@@ -28,6 +31,14 @@ namespace gestionstage.Forms
 
         private void ListEntreprise_Load(object sender, EventArgs e)
         {
+            //Chargement de la liste des entreprises
+            mGridEntreprises.AutoGenerateColumns = false;
+            mGridEntreprises.Columns[0].DataPropertyName = "siret";
+            mGridEntreprises.Columns[1].DataPropertyName = "nom";
+            mGridEntreprises.DataSource = DaoEntreprise.dtReadAll();
+
+
+            //Chargement des tuiles de couleurs, pour le changement de thème
             for (int i =1; i < 13; i++)
             {
                 if (i == 2)

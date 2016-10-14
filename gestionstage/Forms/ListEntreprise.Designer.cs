@@ -43,15 +43,16 @@
             this.mTBSearch = new MetroFramework.Controls.MetroTextBox();
             this.mMenu = new MetroFramework.Controls.MetroTabControl();
             this.mMenuTEST = new MetroFramework.Controls.MetroTabPage();
+            this.mTESTViewEntreprise = new MetroFramework.Controls.MetroTile();
             this.mTESTModifyEntreprise = new MetroFramework.Controls.MetroTile();
             this.mTESTAddEntreprise = new MetroFramework.Controls.MetroTile();
             this.mTestAddContrat = new MetroFramework.Controls.MetroTile();
-            this.mTESTViewEntreprise = new MetroFramework.Controls.MetroTile();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mSMListEntreprise)).BeginInit();
             this.mMenuSettings.SuspendLayout();
             this.mMenuEntreprise.SuspendLayout();
@@ -137,6 +138,8 @@
             // 
             // mGridEntreprises
             // 
+            this.mGridEntreprises.AllowUserToAddRows = false;
+            this.mGridEntreprises.AllowUserToDeleteRows = false;
             this.mGridEntreprises.AllowUserToResizeRows = false;
             this.mGridEntreprises.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -183,6 +186,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.mGridEntreprises.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.mGridEntreprises.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.mGridEntreprises.RowTemplate.Height = 25;
             this.mGridEntreprises.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mGridEntreprises.Size = new System.Drawing.Size(967, 564);
             this.mGridEntreprises.TabIndex = 8;
@@ -275,6 +279,20 @@
             this.mMenuTEST.VerticalScrollbarHighlightOnWheel = false;
             this.mMenuTEST.VerticalScrollbarSize = 10;
             // 
+            // mTESTViewEntreprise
+            // 
+            this.mTESTViewEntreprise.ActiveControl = null;
+            this.mTESTViewEntreprise.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mTESTViewEntreprise.Location = new System.Drawing.Point(3, 258);
+            this.mTESTViewEntreprise.Name = "mTESTViewEntreprise";
+            this.mTESTViewEntreprise.Size = new System.Drawing.Size(962, 50);
+            this.mTESTViewEntreprise.TabIndex = 5;
+            this.mTESTViewEntreprise.Text = "ViewEntreprise";
+            this.mTESTViewEntreprise.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.mTESTViewEntreprise.UseSelectable = true;
+            this.mTESTViewEntreprise.Click += new System.EventHandler(this.mTESTViewEntreprise_Click);
+            // 
             // mTESTModifyEntreprise
             // 
             this.mTESTModifyEntreprise.ActiveControl = null;
@@ -317,19 +335,12 @@
             this.mTestAddContrat.UseSelectable = true;
             this.mTestAddContrat.Click += new System.EventHandler(this.mTestAddContrat_Click);
             // 
-            // mTESTViewEntreprise
+            // dataGridViewImageColumn1
             // 
-            this.mTESTViewEntreprise.ActiveControl = null;
-            this.mTESTViewEntreprise.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mTESTViewEntreprise.Location = new System.Drawing.Point(3, 258);
-            this.mTESTViewEntreprise.Name = "mTESTViewEntreprise";
-            this.mTESTViewEntreprise.Size = new System.Drawing.Size(962, 50);
-            this.mTESTViewEntreprise.TabIndex = 5;
-            this.mTESTViewEntreprise.Text = "ViewEntreprise";
-            this.mTESTViewEntreprise.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.mTESTViewEntreprise.UseSelectable = true;
-            this.mTESTViewEntreprise.Click += new System.EventHandler(this.mTESTViewEntreprise_Click);
+            this.dataGridViewImageColumn1.HeaderText = "Modifier";
+            this.dataGridViewImageColumn1.Image = global::gestionstage.Properties.Resources.tab_modifier;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -346,20 +357,30 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.HeaderText = "Afficher";
+            this.dataGridViewTextBoxColumn3.Image = global::gestionstage.Properties.Resources.tab_afficher;
+            this.dataGridViewTextBoxColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 50;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn3.Width = 55;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.HeaderText = "Modifier";
+            this.dataGridViewTextBoxColumn4.Image = global::gestionstage.Properties.Resources.tab_modifier;
+            this.dataGridViewTextBoxColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 50;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.Width = 55;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.HeaderText = "Supprimer";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 50;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn5.Width = 75;
             // 
             // ListEntreprise
             // 
@@ -397,10 +418,11 @@
         private MetroFramework.Controls.MetroTile mTESTAddEntreprise;
         private MetroFramework.Controls.MetroTile mTESTModifyEntreprise;
         private MetroFramework.Controls.MetroTile mTESTViewEntreprise;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewTextBoxColumn5;
     }
 }

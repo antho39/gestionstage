@@ -294,6 +294,7 @@
             this.mButtonAddEntreprise.Text = "Ajouter l\'entreprise";
             this.mButtonAddEntreprise.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mButtonAddEntreprise.UseSelectable = true;
+            this.mButtonAddEntreprise.Click += new System.EventHandler(this.mButtonAddEntreprise_Click);
             // 
             // mTxBEntrepriseSiret
             // 
@@ -380,6 +381,7 @@
             this.mTxBEntrepriseName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mTxBEntrepriseName.CustomButton.UseSelectable = true;
             this.mTxBEntrepriseName.CustomButton.Visible = false;
+            this.mTxBEntrepriseName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.mTxBEntrepriseName.Lines = new string[0];
             this.mTxBEntrepriseName.Location = new System.Drawing.Point(175, 110);
             this.mTxBEntrepriseName.MaxLength = 32767;

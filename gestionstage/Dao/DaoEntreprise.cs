@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 // Librairie MySQL
 using MySql.Data.MySqlClient;
+using System.Data;
 
 // Classes du projets
 using gestionstage.Classes;
+
 
 namespace gestionstage.Dao
 {
@@ -99,5 +101,32 @@ namespace gestionstage.Dao
                 return lesEntreprises;
             }
         }
+
+        public static DataTable dtReadAll()
+        {
+            DataTable dtEntreprise = new DataTable();
+
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM entreprise"; // TODO changer le nom de la table
+
+                MySqlDataReader res = cmd.ExecuteReader();
+
+                dtEntreprise.Load(res);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+                return dtEntreprise;
+            }
+
+            return dtEntreprise;
+        }
+       
     }
 }

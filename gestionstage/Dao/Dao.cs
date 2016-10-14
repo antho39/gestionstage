@@ -17,7 +17,7 @@ namespace gestionstage.Dao
         //Méthodes
         protected static void open()
         {
-            string cs = @"server=localhost;userid=root;password=;database=PPE2";
+            string cs = @"server=localhost;userid=root;password=;database=gestionstage";
             try
             {
                 conn = new MySqlConnection(cs);
