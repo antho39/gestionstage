@@ -9,10 +9,11 @@ using MySql.Data.MySqlClient;
 
 // Classes du projets
 using gestionstage.Classes;
+using System.Data;
 
 namespace gestionstage.Dao
 {
-    class DaoContrats : Dao
+    class DaoContrat : Dao
     {
         public static void create(Contrat uneContrat)
         {
@@ -98,6 +99,32 @@ namespace gestionstage.Dao
 
                 return lesContrats;
             }
+        }
+
+        public static DataTable dtReadAll()
+        {
+            DataTable dtContrat = new DataTable();
+
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM contrat";
+
+                MySqlDataReader res = cmd.ExecuteReader();
+
+                dtContrat.Load(res);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+                return dtContrat;
+            }
+
+            return dtContrat;
         }
     }
 }

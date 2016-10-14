@@ -111,7 +111,7 @@ namespace gestionstage.Dao
                 open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM entreprise"; // TODO changer le nom de la table
+                cmd.CommandText = "SELECT * FROM entreprise";
 
                 MySqlDataReader res = cmd.ExecuteReader();
 

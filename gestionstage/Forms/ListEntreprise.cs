@@ -31,27 +31,11 @@ namespace gestionstage.Forms
 
         private void ListEntreprise_Load(object sender, EventArgs e)
         {
-            //Chargement de la liste des entreprises
-            mGridEntreprises.AutoGenerateColumns = false;
-            mGridEntreprises.Columns[0].DataPropertyName = "siret";
-            mGridEntreprises.Columns[1].DataPropertyName = "nom";
-            mGridEntreprises.DataSource = DaoEntreprise.dtReadAll();
-
-
-            //Chargement des tuiles de couleurs, pour le changement de thème
-            for (int i =1; i < 13; i++)
-            {
-                if (i == 2)
-                { i = 3; } // Cache le blanc
-                MetroTile _tile = new MetroTile();
-                _tile.Size = new Size(185, 100);
-                _tile.Tag = i; //Valeur de la couleur
-                _tile.Style = (MetroColorStyle)i;
-                _tile.Click += _tile_Click;
-                ConteneurCouleurs.Controls.Add(_tile);
-            }
+            refreshGrid();      //Affichage des entreprises dans le tableau
+            refreshColor();     //Affichage des tuiles de couleurs, pour la selection du thème
         }
 
+        // Les events (cliques, etc...)
         private void mButtonAddEntreprise_Click(object sender, EventArgs e)
         {
             AddEntreprise formAddEntreprise = new AddEntreprise();
@@ -96,6 +80,33 @@ namespace gestionstage.Forms
             ViewEntreprise formViewEntreprise = new ViewEntreprise();
             formViewEntreprise.Show();
             this.Close();
+        }
+
+
+        // Les Refresh 
+        private void refreshGrid()
+        {
+            //Chargement de la liste des entreprises
+            mGridEntreprises.AutoGenerateColumns = false;
+            mGridEntreprises.Columns[0].DataPropertyName = "siret";
+            mGridEntreprises.Columns[1].DataPropertyName = "nom";
+            mGridEntreprises.DataSource = DaoEntreprise.dtReadAll();
+        }
+
+        private void refreshColor()
+        {
+            //Chargement des tuiles de couleurs, pour le changement de thème
+            for (int i = 1; i < 13; i++)
+            {
+                if (i == 2)
+                { i = 3; } // Cache le blanc
+                MetroTile _tile = new MetroTile();
+                _tile.Size = new Size(185, 100);
+                _tile.Tag = i; //Valeur de la couleur
+                _tile.Style = (MetroColorStyle)i;
+                _tile.Click += _tile_Click;
+                ConteneurCouleurs.Controls.Add(_tile);
+            }
         }
     }
 }

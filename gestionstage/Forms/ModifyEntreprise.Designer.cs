@@ -135,6 +135,7 @@
             this.mButtonModifyEntreprise.Text = "Modifier les informations";
             this.mButtonModifyEntreprise.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mButtonModifyEntreprise.UseSelectable = true;
+            this.mButtonModifyEntreprise.Click += new System.EventHandler(this.mButtonModifyEntreprise_Click);
             // 
             // mTxBEntrepriseEmail
             // 

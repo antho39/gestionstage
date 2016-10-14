@@ -54,9 +54,11 @@
             this.mLabelEntrepriseName = new MetroFramework.Controls.MetroLabel();
             this.mGridContrat = new MetroFramework.Controls.MetroGrid();
             this.Activite = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tuteur = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TuteurName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TuteurFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Classe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Eleve = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EleveNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EleveFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateDebut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Appreciation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -431,6 +433,8 @@
             // 
             // mGridContrat
             // 
+            this.mGridContrat.AllowUserToAddRows = false;
+            this.mGridContrat.AllowUserToDeleteRows = false;
             this.mGridContrat.AllowUserToResizeRows = false;
             this.mGridContrat.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
@@ -450,9 +454,11 @@
             this.mGridContrat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mGridContrat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Activite,
-            this.Tuteur,
+            this.TuteurName,
+            this.TuteurFirstName,
             this.Classe,
-            this.Eleve,
+            this.EleveNom,
+            this.EleveFirstName,
             this.DateDebut,
             this.DateFin,
             this.Appreciation});
@@ -489,21 +495,34 @@
             this.Activite.HeaderText = "Activité";
             this.Activite.Name = "Activite";
             // 
-            // Tuteur
+            // TuteurName
             // 
-            this.Tuteur.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Tuteur.HeaderText = "Tuteur";
-            this.Tuteur.Name = "Tuteur";
+            this.TuteurName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TuteurName.HeaderText = "Nom Tuteur";
+            this.TuteurName.Name = "TuteurName";
+            // 
+            // TuteurFirstName
+            // 
+            this.TuteurFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.TuteurFirstName.HeaderText = "Prenom Tuteur";
+            this.TuteurFirstName.Name = "TuteurFirstName";
             // 
             // Classe
             // 
             this.Classe.HeaderText = "Classe";
             this.Classe.Name = "Classe";
             // 
-            // Eleve
+            // EleveNom
             // 
-            this.Eleve.HeaderText = "Elève";
-            this.Eleve.Name = "Eleve";
+            this.EleveNom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EleveNom.HeaderText = "Nom élève";
+            this.EleveNom.Name = "EleveNom";
+            // 
+            // EleveFirstName
+            // 
+            this.EleveFirstName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.EleveFirstName.HeaderText = "Prénom élève";
+            this.EleveFirstName.Name = "EleveFirstName";
             // 
             // DateDebut
             // 
@@ -580,9 +599,11 @@
         private MetroFramework.Controls.MetroLabel mLabelEntrepriseName;
         private MetroFramework.Controls.MetroGrid mGridContrat;
         private System.Windows.Forms.DataGridViewTextBoxColumn Activite;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tuteur;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TuteurName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TuteurFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Classe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Eleve;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EleveNom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EleveFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateDebut;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateFin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Appreciation;
