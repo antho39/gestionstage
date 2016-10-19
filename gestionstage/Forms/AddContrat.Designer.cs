@@ -56,6 +56,12 @@
             this.mLabelDateBegin = new MetroFramework.Controls.MetroLabel();
             this.mLabelDateEnd = new MetroFramework.Controls.MetroLabel();
             this.mDTDateEnd = new MetroFramework.Controls.MetroDateTime();
+            this.mRadioButtonApprentissage = new MetroFramework.Controls.MetroRadioButton();
+            this.mRadioButtonStage = new MetroFramework.Controls.MetroRadioButton();
+            this.metroRadioButton3 = new MetroFramework.Controls.MetroRadioButton();
+            this.mRadioButton6semaines = new MetroFramework.Controls.MetroRadioButton();
+            this.mRadioButton1an = new MetroFramework.Controls.MetroRadioButton();
+            this.mRadioButton2ans = new MetroFramework.Controls.MetroRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.mSMAddContrat)).BeginInit();
             this.SuspendLayout();
             // 
@@ -505,11 +511,77 @@
             this.mDTDateEnd.TabIndex = 43;
             this.mDTDateEnd.Value = new System.DateTime(2016, 10, 13, 0, 0, 0, 0);
             // 
+            // mRadioButtonApprentissage
+            // 
+            this.mRadioButtonApprentissage.AutoSize = true;
+            this.mRadioButtonApprentissage.Location = new System.Drawing.Point(175, 134);
+            this.mRadioButtonApprentissage.Name = "mRadioButtonApprentissage";
+            this.mRadioButtonApprentissage.Size = new System.Drawing.Size(151, 15);
+            this.mRadioButtonApprentissage.TabIndex = 45;
+            this.mRadioButtonApprentissage.Text = "Contrat d\'Apprentissage";
+            this.mRadioButtonApprentissage.UseSelectable = true;
+            // 
+            // mRadioButtonStage
+            // 
+            this.mRadioButtonStage.AutoSize = true;
+            this.mRadioButtonStage.Location = new System.Drawing.Point(332, 134);
+            this.mRadioButtonStage.Name = "mRadioButtonStage";
+            this.mRadioButtonStage.Size = new System.Drawing.Size(133, 15);
+            this.mRadioButtonStage.TabIndex = 46;
+            this.mRadioButtonStage.Text = "Convention de Stage";
+            this.mRadioButtonStage.UseSelectable = true;
+            // 
+            // metroRadioButton3
+            // 
+            this.metroRadioButton3.AutoSize = true;
+            this.metroRadioButton3.Location = new System.Drawing.Point(471, 134);
+            this.metroRadioButton3.Name = "metroRadioButton3";
+            this.metroRadioButton3.Size = new System.Drawing.Size(188, 15);
+            this.metroRadioButton3.TabIndex = 47;
+            this.metroRadioButton3.Text = "Contrat de Professionnalisation";
+            this.metroRadioButton3.UseSelectable = true;
+            // 
+            // mRadioButton6semaines
+            // 
+            this.mRadioButton6semaines.AutoSize = true;
+            this.mRadioButton6semaines.Location = new System.Drawing.Point(175, 479);
+            this.mRadioButton6semaines.Name = "mRadioButton6semaines";
+            this.mRadioButton6semaines.Size = new System.Drawing.Size(81, 15);
+            this.mRadioButton6semaines.TabIndex = 48;
+            this.mRadioButton6semaines.Text = "6 semaines";
+            this.mRadioButton6semaines.UseSelectable = true;
+            // 
+            // mRadioButton1an
+            // 
+            this.mRadioButton1an.AutoSize = true;
+            this.mRadioButton1an.Location = new System.Drawing.Point(262, 479);
+            this.mRadioButton1an.Name = "mRadioButton1an";
+            this.mRadioButton1an.Size = new System.Drawing.Size(45, 15);
+            this.mRadioButton1an.TabIndex = 49;
+            this.mRadioButton1an.Text = "1 an";
+            this.mRadioButton1an.UseSelectable = true;
+            // 
+            // mRadioButton2ans
+            // 
+            this.mRadioButton2ans.AutoSize = true;
+            this.mRadioButton2ans.Location = new System.Drawing.Point(313, 479);
+            this.mRadioButton2ans.Name = "mRadioButton2ans";
+            this.mRadioButton2ans.Size = new System.Drawing.Size(50, 15);
+            this.mRadioButton2ans.TabIndex = 50;
+            this.mRadioButton2ans.Text = "2 ans";
+            this.mRadioButton2ans.UseSelectable = true;
+            // 
             // AddContrat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 658);
+            this.Controls.Add(this.mRadioButton2ans);
+            this.Controls.Add(this.mRadioButton1an);
+            this.Controls.Add(this.mRadioButton6semaines);
+            this.Controls.Add(this.metroRadioButton3);
+            this.Controls.Add(this.mRadioButtonStage);
+            this.Controls.Add(this.mRadioButtonApprentissage);
             this.Controls.Add(this.mLabelDateEnd);
             this.Controls.Add(this.mDTDateEnd);
             this.Controls.Add(this.mLabelDateBegin);
@@ -573,5 +645,11 @@
         private MetroFramework.Controls.MetroDateTime mDTDateEnd;
         private MetroFramework.Controls.MetroLabel mLabelDateBegin;
         private MetroFramework.Controls.MetroLabel mLabelContrat;
+        private MetroFramework.Controls.MetroRadioButton metroRadioButton3;
+        private MetroFramework.Controls.MetroRadioButton mRadioButtonStage;
+        private MetroFramework.Controls.MetroRadioButton mRadioButtonApprentissage;
+        private MetroFramework.Controls.MetroRadioButton mRadioButton2ans;
+        private MetroFramework.Controls.MetroRadioButton mRadioButton1an;
+        private MetroFramework.Controls.MetroRadioButton mRadioButton6semaines;
     }
 }
