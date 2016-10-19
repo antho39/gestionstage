@@ -96,10 +96,8 @@ namespace gestionstage.Forms
         private void refreshColor()
         {
             //Chargement des tuiles de couleurs, pour le changement de thème
-            for (int i = 1; i < 13; i++)
+            for (int i = 3; i < 13; i++) // i = 3 pour cacher Blanc et Noir.
             {
-                if (i == 2)
-                { i = 3; } // Cache le blanc
                 MetroTile _tile = new MetroTile();
                 _tile.Size = new Size(185, 100);
                 _tile.Tag = i; //Valeur de la couleur
@@ -111,10 +109,20 @@ namespace gestionstage.Forms
 
         private void mGridEntreprises_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Ignore clicks that are not in our 
-            if (e.ColumnIndex == mGridEntreprises.Columns["MyButtonColumn"].Index && e.RowIndex >= 0)
+            // Si clique sur la column dataGridViewTextBoxColumn3 (Afficher) et Pas sur le header
+            if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn3"].Index && e.RowIndex >= 0)                
             {
-                Console.WriteLine("Button on row {0} clicked", e.RowIndex);
+                MessageBox.Show("Afficher");
+            }
+            // Si clique sur la column dataGridViewTextBoxColumn4 (Modifier) et Pas sur le header
+            if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn4"].Index && e.RowIndex >= 0)
+            {
+                MessageBox.Show("Modifier");
+            }
+            // Si clique sur la column dataGridViewTextBoxColumn5 (Supprimer) et Pas sur le header
+            if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn5"].Index && e.RowIndex >= 0)
+            {
+                MessageBox.Show("Supprimer");
             }
         }
     }
