@@ -111,7 +111,7 @@ namespace gestionstage.Dao
                 open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM entreprise";
+                cmd.CommandText = "SELECT * FROM entreprises";
 
                 MySqlDataReader res = cmd.ExecuteReader();
 

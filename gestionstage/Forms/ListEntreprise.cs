@@ -108,5 +108,14 @@ namespace gestionstage.Forms
                 ConteneurCouleurs.Controls.Add(_tile);
             }
         }
+
+        private void mGridEntreprises_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Ignore clicks that are not in our 
+            if (e.ColumnIndex == mGridEntreprises.Columns["MyButtonColumn"].Index && e.RowIndex >= 0)
+            {
+                Console.WriteLine("Button on row {0} clicked", e.RowIndex);
+            }
+        }
     }
 }

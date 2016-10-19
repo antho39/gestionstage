@@ -56,6 +56,7 @@ namespace gestionstage.Forms
                     lesErreurs += erreur + "\n";
                 }
                 MetroMessageBox.Show(this, lesErreurs, "Erreur");
+                lsError.Clear();
             }
         }
 
@@ -68,7 +69,7 @@ namespace gestionstage.Forms
             }
             else if (!(IsNumeric(mTxBEntrepriseSiret.Text)))
             {
-                lsError.Add("Champ \"Siret\" n'est pas composé de chiffres");
+                lsError.Add("Champ \"Siret\" n'est pas composé de 14 chiffres");
             }
             else if (IsNumeric(mTxBEntrepriseSiret.Text) && mTxBEntrepriseSiret.Text.Length != 14)
             {

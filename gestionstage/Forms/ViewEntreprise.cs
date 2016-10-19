@@ -37,15 +37,14 @@ namespace gestionstage.Forms
         {
             //Chargement de la liste des entreprises
             mGridContrat.AutoGenerateColumns = false;
-            mGridContrat.Columns[0].DataPropertyName = ""; //TODO Activité
-            mGridContrat.Columns[1].DataPropertyName = "tuteur_nom";
-            mGridContrat.Columns[2].DataPropertyName = "tuteur_prenom";
-            mGridContrat.Columns[3].DataPropertyName = ""; //TODO Classe
-            mGridContrat.Columns[4].DataPropertyName = "stagiaire_nom";
-            mGridContrat.Columns[5].DataPropertyName = "stagiaire_prenom";
-            mGridContrat.Columns[6].DataPropertyName = "date_debut";
-            mGridContrat.Columns[7].DataPropertyName = "date_fin";
-            mGridContrat.Columns[8].DataPropertyName = ""; //TODO appréciation
+            mGridContrat.Columns[0].DataPropertyName = "t_nom";
+            mGridContrat.Columns[1].DataPropertyName = "t_prenom";
+            mGridContrat.Columns[2].DataPropertyName = "c_nom";
+            mGridContrat.Columns[3].DataPropertyName = "s_nom";
+            mGridContrat.Columns[4].DataPropertyName = "s_prenom";
+            mGridContrat.Columns[5].DataPropertyName = "date_debut";
+            mGridContrat.Columns[6].DataPropertyName = "date_fin";
+            mGridContrat.Columns[7].DataPropertyName = "appreciation";
             mGridContrat.DataSource = DaoContrat.dtReadAll();
         }
     }

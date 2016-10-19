@@ -110,7 +110,7 @@ namespace gestionstage.Dao
                 open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM contrat";
+                cmd.CommandText = "SELECT contrats.id, bool_apprentissage, s_nom, s_prenom, t_nom, t_prenom, t_mail, t_telephone, date_debut, date_fin, commentaire, bool_envoye, appreciation, entreprise_id, formations.nom AS c_nom FROM contrats INNER JOIN formations ON contrats.formation_id = formations.id";
 
                 MySqlDataReader res = cmd.ExecuteReader();
 
