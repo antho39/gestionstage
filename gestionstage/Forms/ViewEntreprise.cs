@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using gestionstage.Properties;
 using gestionstage.Dao;
 using gestionstage.Classes;
+using MetroFramework;
 
 namespace gestionstage.Forms
 {
@@ -31,6 +32,9 @@ namespace gestionstage.Forms
             refreshGrid();
         }
 
+        // --------------------------------------------------------------------
+        // Bouttons et Cliques :
+        // --------------------------------------------------------------------
         private void mLinkBack_Click(object sender, EventArgs e)
         {
             //TODO : Changer pour la page précédente (ViewEntreprise)
@@ -39,6 +43,44 @@ namespace gestionstage.Forms
             this.Close();
         }
 
+        private void mButtonAddContrat_Click(object sender, EventArgs e)
+        {
+            AddContrat formAddContrat = new AddContrat(lEntreprise.Siret);
+            formAddContrat.Show();
+            this.Close();
+        }
+
+        private void mButtonModifyEntreprise_Click(object sender, EventArgs e)
+        {
+            ModifyEntreprise formModifyEntreprise = new ModifyEntreprise(lEntreprise.Siret);
+            formModifyEntreprise.Show();
+            this.Close();
+        }
+
+        private void mButtonDeleteEntreprise_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MetroMessageBox.Show(this, "Voulez vous vraiment supprimer l'entreprise ?", "Confirmer la suppréssion", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                DaoEntreprise.delete(lEntreprise.Siret);
+                ListEntreprise formBack = new ListEntreprise();
+                formBack.Show();
+                this.Close();
+            }
+            else if (result == DialogResult.No)
+            {
+                // Ne rien faire
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+        }
+
+        // --------------------------------------------------------------------
+        // Fonctions de refresh :
+        // --------------------------------------------------------------------
         private void refreshLabels()
         {
             //Précharge les labels
