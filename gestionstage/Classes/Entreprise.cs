@@ -8,37 +8,36 @@ namespace gestionstage.Classes
 {
     class Entreprise
     {
-        protected int id;
+        private int id;
         public int Id
         {
             get { return id; }
             set { id = value; }
         }
 
-        private string denomination;
-        public string Denomination
-        {
-            get { return denomination; }
-            set { denomination = value; }
-        }
-
-        private int siret;
-        public int Siret
+        private string siret;
+        public string Siret
         {
             get { return siret; }
             set { siret = value; }
         }
 
-
-        private string rue;
-        public string Rue
+        private string nom;
+        public string Nom
         {
-            get { return rue; }
-            set { rue = value; }
+            get { return nom; }
+            set { nom = value; }
         }
 
-        private int codePostale;
-        public int CodePostale
+        private string adresse;
+        public string Adresse
+        {
+            get { return adresse; }
+            set { adresse = value; }
+        }
+
+        private string codePostale;
+        public string CodePostale
         {
             get { return codePostale; }
             set { codePostale = value; }
@@ -51,6 +50,13 @@ namespace gestionstage.Classes
             set { ville = value; }
         }
 
+        private string telephone;
+        public string Telephone
+        {
+            get { return telephone; }
+            set { telephone = value; }
+        }
+
         private string mail;
         public string Mail
         {
@@ -58,12 +64,20 @@ namespace gestionstage.Classes
             set { mail = value; }
         }
 
-        private int telephone;
-        public int Telephone
+        private string commentaire;
+        public string Commentaire
         {
-            get { return telephone; }
-            set { telephone = value; }
+            get { return commentaire; }
+            set { commentaire = value; }
         }
+
+        private Boolean bool_envoye;
+        public Boolean Bool_envoye
+        {
+            get { return bool_envoye; }
+            set { bool_envoye = value; }
+        }
+
         private List<Contrat> lesContrats;
         public List<Contrat> LesContrats
         {
@@ -74,16 +88,18 @@ namespace gestionstage.Classes
         /// <summary>
         /// Création d'une Entreprise
         /// </summary>
-        public Entreprise(string laDenomination, int unSiret, string laRue, int leCodePostale, string laVille, string leMail, int leTelephone)
+        public Entreprise(int unId, string unSiret, string unNom, string uneAdresse, string unCp, string uneVille, string unTelephone, string unMail, string unCommentaire, Boolean unBool_envoye)
         {
-            id = 0;
-            denomination = laDenomination;
-            siret = unSiret;
-            rue = laRue;
-            codePostale = leCodePostale;
-            ville = laVille;
-            mail = leMail;
-            telephone = leTelephone;
+            this.id = unId;
+            this.siret = unSiret;
+            this.nom = unNom;
+            this.adresse = uneAdresse;
+            this.codePostale = unCp;
+            this.ville = uneVille;
+            this.telephone = unTelephone;
+            this.mail = unMail;
+            this.commentaire = unCommentaire;
+            this.bool_envoye = unBool_envoye;
             lesContrats = new List<Contrat>();
         }
     }

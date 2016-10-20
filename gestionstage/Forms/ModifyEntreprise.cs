@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 //Using perso
+using gestionstage.Classes;
+using gestionstage.Dao;
 using gestionstage.Properties;
 using MetroFramework;
 
@@ -17,12 +19,17 @@ namespace gestionstage.Forms
     public partial class ModifyEntreprise : MetroFramework.Forms.MetroForm
     {
         List<string> lsError = new List<string>();
+        Entreprise lEntreprise;
 
-        public ModifyEntreprise()
+        public ModifyEntreprise(string siret = null)
         {
+            this.lEntreprise = DaoEntreprise.readOneBySiret(siret);
+
             InitializeComponent();
             this.StyleManager = mSMModifyEntreprise;
             this.StyleManager.Style = (MetroFramework.MetroColorStyle)Settings.Default.Style;
+
+            refreshLabels();
         }
 
         private void mLinkBack_Click(object sender, EventArgs e)
@@ -33,6 +40,26 @@ namespace gestionstage.Forms
             this.Close();
         }
 
+        // --------------------------------------------------------------------
+        // Fonctions de refresh :
+        // --------------------------------------------------------------------
+        private void refreshLabels()
+        {
+            //Précharge les labels
+            mTxBEntrepriseSiret.Text = lEntreprise.Siret;
+            mTxBEntrepriseName.Text = lEntreprise.Nom;
+            mTxBEntrepriseAdresse.Text = lEntreprise.Adresse;
+            mTxBEntreprisePostalCode.Text = lEntreprise.CodePostale;
+            mTxBEntrepriseCity.Text = lEntreprise.Ville;
+            mTxBEntrepriseTelephone.Text = lEntreprise.Telephone;
+            if (mTxBEntrepriseTelephone.Text == "") { mTxBEntrepriseTelephone.Text = "Non renseigné"; }
+            mTxBEntrepriseEmail.Text = lEntreprise.Mail;
+            if (mTxBEntrepriseEmail.Text == "") { mTxBEntrepriseEmail.Text = "Non renseigné"; }
+        }
+
+        // --------------------------------------------------------------------
+        // Buttons :
+        // --------------------------------------------------------------------
         private void mButtonModifyEntreprise_Click(object sender, EventArgs e)
         {
             CheckErrorSiret();
@@ -60,7 +87,9 @@ namespace gestionstage.Forms
             }
         }
 
+        // --------------------------------------------------------------------
         // Fonctions de vérification des champs avant l'ajout de l'entreprise :
+        // --------------------------------------------------------------------
         private void CheckErrorSiret()
         {
             if (mTxBEntrepriseSiret.Text == "")
@@ -69,7 +98,7 @@ namespace gestionstage.Forms
             }
             else if (!(IsNumeric(mTxBEntrepriseSiret.Text)))
             {
-                lsError.Add("Champ \"Siret\" n'est pas composé de 14 chiffres");
+                lsError.Add("Champ \"Siret\" doit être numérique");
             }
             else if (IsNumeric(mTxBEntrepriseSiret.Text) && mTxBEntrepriseSiret.Text.Length != 14)
             {
@@ -142,15 +171,18 @@ namespace gestionstage.Forms
             }
         }
 
+        // --------------------------------------------------------------------
+        // Fonctions privé :
+        // --------------------------------------------------------------------
         // Renvois true si la chaine passé en paramètre est numérique
         private bool IsNumeric(string someNumber)
         {
-            try
+            long test;
+            if (Int64.TryParse(someNumber, out test))
             {
-                int.Parse(someNumber);
                 return true;
             }
-            catch
+            else
             {
                 return false;
             }

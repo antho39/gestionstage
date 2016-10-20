@@ -152,6 +152,7 @@
             this.mTxBEntrepriseSiret.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mTxBEntrepriseSiret.CustomButton.UseSelectable = true;
             this.mTxBEntrepriseSiret.CustomButton.Visible = false;
+            this.mTxBEntrepriseSiret.Enabled = false;
             this.mTxBEntrepriseSiret.Lines = new string[0];
             this.mTxBEntrepriseSiret.Location = new System.Drawing.Point(175, 150);
             this.mTxBEntrepriseSiret.MaxLength = 32767;
@@ -195,6 +196,7 @@
             this.mTxBEntrepriseEmail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mTxBEntrepriseEmail.CustomButton.UseSelectable = true;
             this.mTxBEntrepriseEmail.CustomButton.Visible = false;
+            this.mTxBEntrepriseEmail.Enabled = false;
             this.mTxBEntrepriseEmail.Lines = new string[0];
             this.mTxBEntrepriseEmail.Location = new System.Drawing.Point(175, 360);
             this.mTxBEntrepriseEmail.MaxLength = 32767;
@@ -239,6 +241,7 @@
             this.mTxBEntrepriseTelephone.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mTxBEntrepriseTelephone.CustomButton.UseSelectable = true;
             this.mTxBEntrepriseTelephone.CustomButton.Visible = false;
+            this.mTxBEntrepriseTelephone.Enabled = false;
             this.mTxBEntrepriseTelephone.Lines = new string[0];
             this.mTxBEntrepriseTelephone.Location = new System.Drawing.Point(175, 325);
             this.mTxBEntrepriseTelephone.MaxLength = 32767;
@@ -282,6 +285,7 @@
             this.mTxBEntrepriseCity.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mTxBEntrepriseCity.CustomButton.UseSelectable = true;
             this.mTxBEntrepriseCity.CustomButton.Visible = false;
+            this.mTxBEntrepriseCity.Enabled = false;
             this.mTxBEntrepriseCity.Lines = new string[0];
             this.mTxBEntrepriseCity.Location = new System.Drawing.Point(175, 290);
             this.mTxBEntrepriseCity.MaxLength = 32767;
@@ -325,6 +329,7 @@
             this.mTxBEntreprisePostalCode.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mTxBEntreprisePostalCode.CustomButton.UseSelectable = true;
             this.mTxBEntreprisePostalCode.CustomButton.Visible = false;
+            this.mTxBEntreprisePostalCode.Enabled = false;
             this.mTxBEntreprisePostalCode.Lines = new string[0];
             this.mTxBEntreprisePostalCode.Location = new System.Drawing.Point(175, 255);
             this.mTxBEntreprisePostalCode.MaxLength = 32767;
@@ -368,6 +373,7 @@
             this.mTxBEntrepriseAdresse.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mTxBEntrepriseAdresse.CustomButton.UseSelectable = true;
             this.mTxBEntrepriseAdresse.CustomButton.Visible = false;
+            this.mTxBEntrepriseAdresse.Enabled = false;
             this.mTxBEntrepriseAdresse.Lines = new string[0];
             this.mTxBEntrepriseAdresse.Location = new System.Drawing.Point(175, 220);
             this.mTxBEntrepriseAdresse.MaxLength = 32767;
@@ -411,6 +417,7 @@
             this.mTxBEntrepriseName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.mTxBEntrepriseName.CustomButton.UseSelectable = true;
             this.mTxBEntrepriseName.CustomButton.Visible = false;
+            this.mTxBEntrepriseName.Enabled = false;
             this.mTxBEntrepriseName.Lines = new string[0];
             this.mTxBEntrepriseName.Location = new System.Drawing.Point(175, 185);
             this.mTxBEntrepriseName.MaxLength = 32767;

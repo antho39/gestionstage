@@ -112,17 +112,22 @@ namespace gestionstage.Forms
             // Si clique sur la column dataGridViewTextBoxColumn3 (Afficher) et Pas sur le header
             if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn3"].Index && e.RowIndex >= 0)                
             {
-                MessageBox.Show("Afficher");
+                ViewEntreprise formViewEntreprise = new ViewEntreprise(mGridEntreprises.Rows[e.RowIndex].Cells[0].Value.ToString());
+                formViewEntreprise.Show();
+                this.Close();
             }
             // Si clique sur la column dataGridViewTextBoxColumn4 (Modifier) et Pas sur le header
-            if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn4"].Index && e.RowIndex >= 0)
+            else if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn4"].Index && e.RowIndex >= 0)
             {
-                MessageBox.Show("Modifier");
+                ModifyEntreprise formModifyEntreprise = new ModifyEntreprise(mGridEntreprises.Rows[e.RowIndex].Cells[0].Value.ToString());
+                formModifyEntreprise.Show();
+                this.Close();
             }
             // Si clique sur la column dataGridViewTextBoxColumn5 (Supprimer) et Pas sur le header
-            if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn5"].Index && e.RowIndex >= 0)
+            else if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn5"].Index && e.RowIndex >= 0)
             {
-                MessageBox.Show("Supprimer");
+                MetroMessageBox.Show(this, "Voulez vous vraiment supprimer l'entreprise ?", "Confirmer la suppréssion", MessageBoxButtons.YesNo);
+                MessageBox.Show(DialogResult);
             }
         }
     }

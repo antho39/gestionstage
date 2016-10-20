@@ -11,17 +11,23 @@ using System.Windows.Forms;
 //Using perso
 using gestionstage.Properties;
 using gestionstage.Dao;
+using gestionstage.Classes;
 
 namespace gestionstage.Forms
 {
     public partial class ViewEntreprise : MetroFramework.Forms.MetroForm
     {
-        public ViewEntreprise()
+        Entreprise lEntreprise;
+
+        public ViewEntreprise(string siret = null)
         {
+            this.lEntreprise = DaoEntreprise.readOneBySiret(siret);
+
             InitializeComponent();
             this.StyleManager = mSMViewEntreprise;
             this.StyleManager.Style = (MetroFramework.MetroColorStyle)Settings.Default.Style;
 
+            refreshLabels();
             refreshGrid();
         }
 
@@ -31,6 +37,20 @@ namespace gestionstage.Forms
             ListEntreprise formBack = new ListEntreprise();
             formBack.Show();
             this.Close();
+        }
+
+        private void refreshLabels()
+        {
+            //Précharge les labels
+            mTxBEntrepriseSiret.Text = lEntreprise.Siret;
+            mTxBEntrepriseName.Text = lEntreprise.Nom;
+            mTxBEntrepriseAdresse.Text = lEntreprise.Adresse;
+            mTxBEntreprisePostalCode.Text = lEntreprise.CodePostale;
+            mTxBEntrepriseCity.Text = lEntreprise.Ville;
+            mTxBEntrepriseTelephone.Text = lEntreprise.Telephone;
+            if (mTxBEntrepriseTelephone.Text == "") { mTxBEntrepriseTelephone.Text = "Non renseigné"; }
+            mTxBEntrepriseEmail.Text = lEntreprise.Mail;
+            if (mTxBEntrepriseEmail.Text == "") { mTxBEntrepriseEmail.Text = "Non renseigné"; }
         }
 
         private void refreshGrid()
@@ -44,8 +64,8 @@ namespace gestionstage.Forms
             mGridContrat.Columns[4].DataPropertyName = "s_prenom";
             mGridContrat.Columns[5].DataPropertyName = "date_debut";
             mGridContrat.Columns[6].DataPropertyName = "date_fin";
-            mGridContrat.Columns[7].DataPropertyName = "appreciation";
-            mGridContrat.DataSource = DaoContrat.dtReadAll();
+            mGridContrat.Columns[7].DataPropertyName = "appreciation";            
+            mGridContrat.DataSource = DaoContrat.dtReadById(lEntreprise.Id);
         }
     }
 }

@@ -16,36 +16,7 @@ namespace gestionstage.Dao
 {
     class DaoEntreprise : Dao
     {
-        public static void create(Entreprise uneEntreprise)
-        {
-            try
-            {
-                open();
-                
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = conn;
-
-                cmd.CommandText = "INSERT INTO `table`(`attribut`) VALUES (@valeur)"; // TODO change table, attribut et valeur
-
-                cmd.Prepare();
-
-                //cmd.Parameters.AddWithValue("@valeur", uneEntreprise.attribut); // TODO change attribut et valeur
-
-
-                cmd.ExecuteNonQuery();
-
-                uneEntreprise.Id = (int)cmd.LastInsertedId;
-
-                close();
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Error: {0}", ex.ToString());
-
-            }
-        }
-
-        public static Entreprise readOne(int idEntreprise)
+        public static Entreprise readOneBySiret(string nSiret)
         {
             Entreprise lEntreprise = null;
 
@@ -54,13 +25,12 @@ namespace gestionstage.Dao
                 open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM `table` WHERE `id`=" + idEntreprise; // TODO change table
+                cmd.CommandText = "SELECT * FROM entreprises WHERE siret=" + nSiret;
 
                 MySqlDataReader res = cmd.ExecuteReader();
 
                 res.Read();
-                lEntreprise = new Entreprise((string)res["laDenomination"], Convert.ToInt16(res["unSiret"]), (string)res["laRue"], Convert.ToInt16(res["leCodePostale"]), (string)res["laVille"], (string)res["leMail"], Convert.ToInt16(res["leTelephone"])); //Changé par les noms des attributs de la table
-
+                lEntreprise = new Entreprise(Convert.ToInt16(res["id"]), (string)res["siret"], (string)res["nom"], (string)res["adresse"], (string)res["cp"], (string)res["ville"], Convert.ToString(res["telephone"]), Convert.ToString(res["email"]), Convert.ToString(res["commentaire"]), (Boolean)res["bool_envoye"]);
                 close();
 
                 return lEntreprise;
@@ -70,35 +40,6 @@ namespace gestionstage.Dao
                 Console.WriteLine("Error: {0}", ex.ToString());
 
                 return lEntreprise;
-            }
-        }
-
-        public static List<Entreprise> readAll()
-        {
-            List<Entreprise> lesEntreprises = new List<Entreprise>();
-
-            try
-            {
-                open();
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM `table`"; // TODO changer le nom de la table
-
-                MySqlDataReader res = cmd.ExecuteReader();
-
-                while (res.Read())
-                {
-                    lesEntreprises.Add(new Entreprise((string)res["laDenomination"], Convert.ToInt16(res["unSiret"]), (string)res["laRue"], Convert.ToInt16(res["leCodePostale"]), (string)res["laVille"], (string)res["leMail"], Convert.ToInt16(res["leTelephone"]))); //Changé par les noms des attributs de la table
-                }
-                close();
-
-                return lesEntreprises;
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Error: {0}", ex.ToString());
-
-                return lesEntreprises;
             }
         }
 
@@ -127,6 +68,25 @@ namespace gestionstage.Dao
 
             return dtEntreprise;
         }
-       
+
+        public static void delete(string unSiret)
+        {
+            try
+            {
+                open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "DELETE FROM entreprises WHERE siret=" + unSiret;
+
+                cmd.ExecuteNonQuery();
+
+                close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+            }
+        }
     }
 }
