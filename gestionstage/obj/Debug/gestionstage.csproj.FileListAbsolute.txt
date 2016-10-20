@@ -60,3 +60,17 @@ D:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\ob
 E:\Projet_VS\gestionstage2\gestionstage\bin\Debug\gestionstage.exe.config
 E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.exe
 E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.pdb
+E:\Projet_VS\gestionstage2\gestionstage\bin\Debug\gestionstage.exe
+E:\Projet_VS\gestionstage2\gestionstage\bin\Debug\gestionstage.pdb
+E:\Projet_VS\gestionstage2\gestionstage\bin\Debug\MetroFramework.Design.dll
+E:\Projet_VS\gestionstage2\gestionstage\bin\Debug\MetroFramework.dll
+E:\Projet_VS\gestionstage2\gestionstage\bin\Debug\MetroFramework.Fonts.dll
+E:\Projet_VS\gestionstage2\gestionstage\bin\Debug\MySql.Data.dll
+E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.csprojResolveAssemblyReference.cache
+E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.Forms.AddContrat.resources
+E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.Forms.AddEntreprise.resources
+E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.Forms.ListEntreprise.resources
+E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.Forms.ModifyEntreprise.resources
+E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.Forms.ViewEntreprise.resources
+E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.Properties.Resources.resources
+E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.csproj.GenerateResource.Cache
