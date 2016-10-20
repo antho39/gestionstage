@@ -57,3 +57,6 @@ D:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\ob
 D:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ViewEntreprise.resources
 D:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.Properties.Resources.resources
 D:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.csproj.GenerateResource.Cache
+E:\Projet_VS\gestionstage2\gestionstage\bin\Debug\gestionstage.exe.config
+E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.exe
+E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.pdb
