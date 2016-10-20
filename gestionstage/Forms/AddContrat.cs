@@ -15,7 +15,7 @@ namespace gestionstage.Forms
 {
     public partial class AddContrat : MetroFramework.Forms.MetroForm
     {
-        public AddContrat()
+        public AddContrat(string siret = null)
         {
             InitializeComponent();
             this.StyleManager = mSMAddContrat;
