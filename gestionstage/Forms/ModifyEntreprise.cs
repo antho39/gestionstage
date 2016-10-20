@@ -20,24 +20,18 @@ namespace gestionstage.Forms
     {
         List<string> lsError = new List<string>();
         Entreprise lEntreprise;
+        string nSiret;
 
         public ModifyEntreprise(string siret = null)
         {
             this.lEntreprise = DaoEntreprise.readOneBySiret(siret);
+            nSiret = siret;
 
             InitializeComponent();
             this.StyleManager = mSMModifyEntreprise;
             this.StyleManager.Style = (MetroFramework.MetroColorStyle)Settings.Default.Style;
 
             refreshLabels();
-        }
-
-        private void mLinkBack_Click(object sender, EventArgs e)
-        {
-            //TODO : Changer pour la page précédente (ViewEntreprise)
-            ListEntreprise formBack = new ListEntreprise();
-            formBack.Show();
-            this.Close();
         }
 
         // --------------------------------------------------------------------
@@ -58,8 +52,15 @@ namespace gestionstage.Forms
         }
 
         // --------------------------------------------------------------------
-        // Buttons :
+        // Bouttons et Cliques :
         // --------------------------------------------------------------------
+        private void mLinkBack_Click(object sender, EventArgs e)
+        {
+            ListEntreprise formBack = new ListEntreprise();
+            formBack.Show();
+            this.Close();
+        }
+
         private void mButtonModifyEntreprise_Click(object sender, EventArgs e)
         {
             CheckErrorSiret();
@@ -72,7 +73,10 @@ namespace gestionstage.Forms
 
             if (lsError.Count == 0)
             {
-                //Aucune erreur, enrengistrer l'entreprise
+                DaoEntreprise.update(new Entreprise(mTxBEntrepriseSiret.Text, mTxBEntrepriseName.Text, mTxBEntrepriseAdresse.Text, mTxBEntreprisePostalCode.Text, mTxBEntrepriseCity.Text, mTxBEntrepriseTelephone.Text, mTxBEntrepriseEmail.Text, mTxBCommentaire.Text, false));
+                ListEntreprise MainFormListEntreprise = new ListEntreprise();
+                MainFormListEntreprise.Show();
+                this.Close();
             }
             else
             {
@@ -143,30 +147,36 @@ namespace gestionstage.Forms
         }
         private void CheckErrorTelephone()
         {
-            if (mTxBEntrepriseTelephone.Text == "")
+            if (!(mTxBEntrepriseTelephone.Text == "Non renseigné"))
             {
-                lsError.Add("Champ \"Téléphone\" vide");
-            }
-            else if (!(IsNumeric(mTxBEntrepriseTelephone.Text)))
-            {
-                lsError.Add("Champ \"Téléphone\" n'est pas composé de chiffres");
-            }
-            else if (IsNumeric(mTxBEntrepriseTelephone.Text) && mTxBEntrepriseTelephone.Text.Length != 10)
-            {
-                lsError.Add("Champ \"Téléphone\" doit être composé de 10 chiffres");
+                if (mTxBEntrepriseTelephone.Text == "")
+                {
+                    //lsError.Add("Champ \"Téléphone\" vide"); // Commenté car peut être null
+                }
+                else if (!(IsNumeric(mTxBEntrepriseTelephone.Text)))
+                {
+                    lsError.Add("Champ \"Téléphone\" n'est pas composé de chiffres");
+                }
+                else if (IsNumeric(mTxBEntrepriseTelephone.Text) && mTxBEntrepriseTelephone.Text.Length != 10)
+                {
+                    lsError.Add("Champ \"Téléphone\" doit être composé de 10 chiffres");
+                }
             }
         }
         private void CheckErrorEmail()
         {
-            if (mTxBEntrepriseEmail.Text == "")
+            if (!(mTxBEntrepriseEmail.Text == "Non renseigné"))
             {
-                lsError.Add("Champ \"E-mail\" vide");
-            }
-            if (mTxBEntrepriseEmail.Text.IndexOf("@") > -1)
-            {
-                if (mTxBEntrepriseEmail.Text.IndexOf(".", mTxBEntrepriseEmail.Text.IndexOf("@")) > mTxBEntrepriseEmail.Text.IndexOf("@"))
+                if (mTxBEntrepriseEmail.Text == "")
                 {
-                    lsError.Add("Champ \"E-mail\" n'est pas un E-mail valide");
+                    //lsError.Add("Champ \"E-mail\" vide"); // Commenté car peut être null
+                }
+                if (mTxBEntrepriseEmail.Text.IndexOf("@") > -1)
+                {
+                    if (mTxBEntrepriseEmail.Text.IndexOf(".", mTxBEntrepriseEmail.Text.IndexOf("@")) > mTxBEntrepriseEmail.Text.IndexOf("@"))
+                    {
+                        lsError.Add("Champ \"E-mail\" n'est pas un E-mail valide");
+                    }
                 }
             }
         }

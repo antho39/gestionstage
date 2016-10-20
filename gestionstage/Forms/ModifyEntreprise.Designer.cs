@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.mSMModifyEntreprise = new MetroFramework.Components.MetroStyleManager(this.components);
-            this.mLinkBack = new MetroFramework.Controls.MetroLink();
             this.mLabelTitle = new MetroFramework.Controls.MetroLabel();
             this.mTxBEntrepriseSiret = new MetroFramework.Controls.MetroTextBox();
             this.mLabelEntrepriseSiret = new MetroFramework.Controls.MetroLabel();
@@ -47,27 +46,15 @@
             this.mLabelEntrepriseAdresse = new MetroFramework.Controls.MetroLabel();
             this.mTxBEntrepriseName = new MetroFramework.Controls.MetroTextBox();
             this.mLabelEntrepriseName = new MetroFramework.Controls.MetroLabel();
+            this.mLinkBack = new MetroFramework.Controls.MetroLink();
+            this.mTxBCommentaire = new MetroFramework.Controls.MetroTextBox();
+            this.mLabelCommentaire = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.mSMModifyEntreprise)).BeginInit();
             this.SuspendLayout();
             // 
             // mSMModifyEntreprise
             // 
             this.mSMModifyEntreprise.Owner = this;
-            // 
-            // mLinkBack
-            // 
-            this.mLinkBack.FontSize = MetroFramework.MetroLinkSize.Medium;
-            this.mLinkBack.Image = global::gestionstage.Properties.Resources.appbar_arrow_left_left;
-            this.mLinkBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.mLinkBack.ImageSize = 35;
-            this.mLinkBack.Location = new System.Drawing.Point(25, 35);
-            this.mLinkBack.Name = "mLinkBack";
-            this.mLinkBack.Size = new System.Drawing.Size(81, 23);
-            this.mLinkBack.TabIndex = 33;
-            this.mLinkBack.Text = "Retour";
-            this.mLinkBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.mLinkBack.UseSelectable = true;
-            this.mLinkBack.Click += new System.EventHandler(this.mLinkBack_Click);
             // 
             // mLabelTitle
             // 
@@ -128,7 +115,7 @@
             this.mButtonModifyEntreprise.ActiveControl = null;
             this.mButtonModifyEntreprise.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mButtonModifyEntreprise.Location = new System.Drawing.Point(25, 335);
+            this.mButtonModifyEntreprise.Location = new System.Drawing.Point(25, 555);
             this.mButtonModifyEntreprise.Name = "mButtonModifyEntreprise";
             this.mButtonModifyEntreprise.Size = new System.Drawing.Size(979, 50);
             this.mButtonModifyEntreprise.TabIndex = 29;
@@ -396,11 +383,73 @@
             this.mLabelEntrepriseName.TabIndex = 17;
             this.mLabelEntrepriseName.Text = "Nom : ";
             // 
+            // mLinkBack
+            // 
+            this.mLinkBack.FontSize = MetroFramework.MetroLinkSize.Medium;
+            this.mLinkBack.Image = global::gestionstage.Properties.Resources.appbar_arrow_left_left;
+            this.mLinkBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.mLinkBack.ImageSize = 35;
+            this.mLinkBack.Location = new System.Drawing.Point(25, 35);
+            this.mLinkBack.Name = "mLinkBack";
+            this.mLinkBack.Size = new System.Drawing.Size(81, 23);
+            this.mLinkBack.TabIndex = 33;
+            this.mLinkBack.Text = "Retour";
+            this.mLinkBack.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.mLinkBack.UseSelectable = true;
+            this.mLinkBack.Click += new System.EventHandler(this.mLinkBack_Click);
+            // 
+            // mTxBCommentaire
+            // 
+            this.mTxBCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.mTxBCommentaire.CustomButton.Image = null;
+            this.mTxBCommentaire.CustomButton.Location = new System.Drawing.Point(805, 1);
+            this.mTxBCommentaire.CustomButton.Name = "";
+            this.mTxBCommentaire.CustomButton.Size = new System.Drawing.Size(173, 173);
+            this.mTxBCommentaire.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTxBCommentaire.CustomButton.TabIndex = 1;
+            this.mTxBCommentaire.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTxBCommentaire.CustomButton.UseSelectable = true;
+            this.mTxBCommentaire.CustomButton.Visible = false;
+            this.mTxBCommentaire.Lines = new string[0];
+            this.mTxBCommentaire.Location = new System.Drawing.Point(25, 345);
+            this.mTxBCommentaire.MaxLength = 32767;
+            this.mTxBCommentaire.Multiline = true;
+            this.mTxBCommentaire.Name = "mTxBCommentaire";
+            this.mTxBCommentaire.PasswordChar = '\0';
+            this.mTxBCommentaire.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTxBCommentaire.SelectedText = "";
+            this.mTxBCommentaire.SelectionLength = 0;
+            this.mTxBCommentaire.SelectionStart = 0;
+            this.mTxBCommentaire.ShortcutsEnabled = true;
+            this.mTxBCommentaire.Size = new System.Drawing.Size(979, 175);
+            this.mTxBCommentaire.TabIndex = 35;
+            this.mTxBCommentaire.UseSelectable = true;
+            this.mTxBCommentaire.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTxBCommentaire.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // mLabelCommentaire
+            // 
+            this.mLabelCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mLabelCommentaire.AutoSize = true;
+            this.mLabelCommentaire.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.mLabelCommentaire.Location = new System.Drawing.Point(25, 320);
+            this.mLabelCommentaire.Name = "mLabelCommentaire";
+            this.mLabelCommentaire.Size = new System.Drawing.Size(101, 19);
+            this.mLabelCommentaire.TabIndex = 34;
+            this.mLabelCommentaire.Text = "Commentaire : ";
+            // 
             // ModifyEntreprise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 408);
+            this.ClientSize = new System.Drawing.Size(1024, 618);
+            this.Controls.Add(this.mTxBCommentaire);
+            this.Controls.Add(this.mLabelCommentaire);
             this.Controls.Add(this.mLinkBack);
             this.Controls.Add(this.mLabelTitle);
             this.Controls.Add(this.mTxBEntrepriseSiret);
@@ -418,7 +467,7 @@
             this.Controls.Add(this.mLabelEntrepriseAdresse);
             this.Controls.Add(this.mTxBEntrepriseName);
             this.Controls.Add(this.mLabelEntrepriseName);
-            this.MinimumSize = new System.Drawing.Size(400, 408);
+            this.MinimumSize = new System.Drawing.Size(400, 618);
             this.Name = "ModifyEntreprise";
             ((System.ComponentModel.ISupportInitialize)(this.mSMModifyEntreprise)).EndInit();
             this.ResumeLayout(false);
@@ -446,5 +495,7 @@
         private MetroFramework.Controls.MetroLabel mLabelEntrepriseAdresse;
         private MetroFramework.Controls.MetroTextBox mTxBEntrepriseName;
         private MetroFramework.Controls.MetroLabel mLabelEntrepriseName;
+        private MetroFramework.Controls.MetroTextBox mTxBCommentaire;
+        private MetroFramework.Controls.MetroLabel mLabelCommentaire;
     }
 }

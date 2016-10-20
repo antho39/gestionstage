@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 //Using perso
 using gestionstage.Properties; // Personnalisation des couleurs
+using gestionstage.Dao;
+using gestionstage.Classes;
 using MetroFramework;
 
 namespace gestionstage.Forms
@@ -25,6 +27,9 @@ namespace gestionstage.Forms
             this.StyleManager.Style = (MetroFramework.MetroColorStyle)Settings.Default.Style;
         }
 
+        // --------------------------------------------------------------------
+        // Bouttons et Cliques :
+        // --------------------------------------------------------------------
         private void mLinkBack_Click(object sender, EventArgs e)
         {
             ListEntreprise MainFormListEntreprise = new ListEntreprise();
@@ -44,7 +49,10 @@ namespace gestionstage.Forms
 
             if (lsError.Count == 0)
             {
-                //Aucune erreur, enrengistrer l'entreprise
+                DaoEntreprise.create(new Entreprise(mTxBEntrepriseSiret.Text, mTxBEntrepriseName.Text, mTxBEntrepriseAdresse.Text, mTxBEntreprisePostalCode.Text, mTxBEntrepriseCity.Text, mTxBEntrepriseTelephone.Text, mTxBEntrepriseEmail.Text, mTxBCommentaire.Text, false));
+                ListEntreprise MainFormListEntreprise = new ListEntreprise();
+                MainFormListEntreprise.Show();
+                this.Close();
             }
             else
             {
@@ -59,7 +67,9 @@ namespace gestionstage.Forms
             }
         }
 
+        // --------------------------------------------------------------------
         // Fonctions de vérification des champs avant l'ajout de l'entreprise :
+        // --------------------------------------------------------------------
         private void CheckErrorSiret()
         {
             if (mTxBEntrepriseSiret.Text == "")
@@ -115,7 +125,7 @@ namespace gestionstage.Forms
         {
             if (mTxBEntrepriseTelephone.Text == "")
             {
-                lsError.Add("Champ \"Téléphone\" vide");
+                //lsError.Add("Champ \"Téléphone\" vide"); // Commenté car peut être null
             }
             else if (!(IsNumeric(mTxBEntrepriseTelephone.Text)))
             {
@@ -130,7 +140,7 @@ namespace gestionstage.Forms
         {
             if (mTxBEntrepriseEmail.Text == "")
             {
-                lsError.Add("Champ \"E-mail\" vide");
+                //lsError.Add("Champ \"E-mail\" vide"); // Commenté car peut être null
             }
             if (mTxBEntrepriseEmail.Text.IndexOf("@") > -1)
             {
@@ -141,15 +151,18 @@ namespace gestionstage.Forms
             }
         }
 
+        // --------------------------------------------------------------------
+        // Fonctions privé :
+        // --------------------------------------------------------------------
         // Renvois true si la chaine passé en paramètre est numérique
         private bool IsNumeric(string someNumber)
         {
-            try
+            long test;
+            if (Int64.TryParse(someNumber, out test))
             {
-                int.Parse(someNumber);
                 return true;
             }
-            catch
+            else
             {
                 return false;
             }

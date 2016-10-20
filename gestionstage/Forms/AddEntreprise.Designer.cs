@@ -47,6 +47,8 @@
             this.mLabelTitle = new MetroFramework.Controls.MetroLabel();
             this.mLinkBack = new MetroFramework.Controls.MetroLink();
             this.mTxBEntrepriseName = new MetroFramework.Controls.MetroTextBox();
+            this.mTxBCommentaire = new MetroFramework.Controls.MetroTextBox();
+            this.mLabelCommentaire = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.mSMAddEntreprise)).BeginInit();
             this.SuspendLayout();
             // 
@@ -287,7 +289,7 @@
             this.mButtonAddEntreprise.ActiveControl = null;
             this.mButtonAddEntreprise.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mButtonAddEntreprise.Location = new System.Drawing.Point(25, 335);
+            this.mButtonAddEntreprise.Location = new System.Drawing.Point(25, 555);
             this.mButtonAddEntreprise.Name = "mButtonAddEntreprise";
             this.mButtonAddEntreprise.Size = new System.Drawing.Size(979, 50);
             this.mButtonAddEntreprise.TabIndex = 12;
@@ -398,11 +400,58 @@
             this.mTxBEntrepriseName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.mTxBEntrepriseName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // mTxBCommentaire
+            // 
+            this.mTxBCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.mTxBCommentaire.CustomButton.Image = null;
+            this.mTxBCommentaire.CustomButton.Location = new System.Drawing.Point(805, 1);
+            this.mTxBCommentaire.CustomButton.Name = "";
+            this.mTxBCommentaire.CustomButton.Size = new System.Drawing.Size(173, 173);
+            this.mTxBCommentaire.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTxBCommentaire.CustomButton.TabIndex = 1;
+            this.mTxBCommentaire.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTxBCommentaire.CustomButton.UseSelectable = true;
+            this.mTxBCommentaire.CustomButton.Visible = false;
+            this.mTxBCommentaire.Lines = new string[0];
+            this.mTxBCommentaire.Location = new System.Drawing.Point(25, 345);
+            this.mTxBCommentaire.MaxLength = 32767;
+            this.mTxBCommentaire.Multiline = true;
+            this.mTxBCommentaire.Name = "mTxBCommentaire";
+            this.mTxBCommentaire.PasswordChar = '\0';
+            this.mTxBCommentaire.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTxBCommentaire.SelectedText = "";
+            this.mTxBCommentaire.SelectionLength = 0;
+            this.mTxBCommentaire.SelectionStart = 0;
+            this.mTxBCommentaire.ShortcutsEnabled = true;
+            this.mTxBCommentaire.Size = new System.Drawing.Size(979, 175);
+            this.mTxBCommentaire.TabIndex = 18;
+            this.mTxBCommentaire.UseSelectable = true;
+            this.mTxBCommentaire.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTxBCommentaire.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // mLabelCommentaire
+            // 
+            this.mLabelCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mLabelCommentaire.AutoSize = true;
+            this.mLabelCommentaire.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.mLabelCommentaire.Location = new System.Drawing.Point(25, 320);
+            this.mLabelCommentaire.Name = "mLabelCommentaire";
+            this.mLabelCommentaire.Size = new System.Drawing.Size(101, 19);
+            this.mLabelCommentaire.TabIndex = 17;
+            this.mLabelCommentaire.Text = "Commentaire : ";
+            // 
             // AddEntreprise
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 408);
+            this.ClientSize = new System.Drawing.Size(1024, 618);
+            this.Controls.Add(this.mTxBCommentaire);
+            this.Controls.Add(this.mLabelCommentaire);
             this.Controls.Add(this.mLinkBack);
             this.Controls.Add(this.mLabelTitle);
             this.Controls.Add(this.mTxBEntrepriseSiret);
@@ -420,7 +469,7 @@
             this.Controls.Add(this.mLabelEntrepriseAdresse);
             this.Controls.Add(this.mTxBEntrepriseName);
             this.Controls.Add(this.mLabelEntrepriseName);
-            this.MinimumSize = new System.Drawing.Size(400, 408);
+            this.MinimumSize = new System.Drawing.Size(400, 618);
             this.Name = "AddEntreprise";
             this.Padding = new System.Windows.Forms.Padding(50, 60, 20, 20);
             ((System.ComponentModel.ISupportInitialize)(this.mSMAddEntreprise)).EndInit();
@@ -449,5 +498,7 @@
         private MetroFramework.Controls.MetroLink mLinkBack;
         private MetroFramework.Controls.MetroLabel mLabelTitle;
         private MetroFramework.Controls.MetroTextBox mTxBEntrepriseName;
+        private MetroFramework.Controls.MetroTextBox mTxBCommentaire;
+        private MetroFramework.Controls.MetroLabel mLabelCommentaire;
     }
 }

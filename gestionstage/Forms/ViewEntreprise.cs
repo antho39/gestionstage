@@ -56,7 +56,9 @@ namespace gestionstage.Forms
         private void refreshGrid()
         {
             //Chargement de la liste des entreprises
+            mGridContrat.RowTemplate.MinimumHeight = 35;
             mGridContrat.AutoGenerateColumns = false;
+            // Fait le lien entre la colonne et le noms des colonnes du DataTable pour s'auto remplir
             mGridContrat.Columns[0].DataPropertyName = "t_nom";
             mGridContrat.Columns[1].DataPropertyName = "t_prenom";
             mGridContrat.Columns[2].DataPropertyName = "c_nom";

@@ -15,7 +15,7 @@ PRIMARY KEY (id)
 
 CREATE TABLE contrats(
 id SMALLINT UNSIGNED NOT NULL  AUTO_INCREMENT,
-bool_apprentissage boolean,
+typecontrat_id SMALLINT UNSIGNED NOT NULL,
 formation_id SMALLINT UNSIGNED NOT NULL,
 s_nom VARCHAR(50) NOT NULL,
 s_prenom VARCHAR(50) NOT NULL,
@@ -36,6 +36,14 @@ PRIMARY KEY (id)
 CREATE TABLE formations(
 id SMALLINT UNSIGNED NOT NULL  AUTO_INCREMENT,
 nom VARCHAR(50) NOT NULL,
+nomComplet VARCHAR(50),
+
+PRIMARY KEY (id)
+);
+
+CREATE TABLE typecontrats(
+id SMALLINT UNSIGNED NOT NULL  AUTO_INCREMENT,
+nom VARCHAR(50) NOT NULL,
 
 PRIMARY KEY (id)
 );
@@ -43,3 +51,4 @@ PRIMARY KEY (id)
 
 ALTER TABLE contrats ADD FOREIGN KEY (entreprise_id) REFERENCES entreprises(id);
 ALTER TABLE contrats ADD FOREIGN KEY (formation_id) REFERENCES formations(id);
+ALTER TABLE contrats ADD FOREIGN KEY (typecontrat_id) REFERENCES typecontrats(id);

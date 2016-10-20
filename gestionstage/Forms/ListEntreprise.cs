@@ -35,7 +35,9 @@ namespace gestionstage.Forms
             refreshColor();     //Affichage des tuiles de couleurs, pour la selection du thème
         }
 
-        // Les events (cliques, etc...)
+        // --------------------------------------------------------------------
+        // Button et Clics :
+        // --------------------------------------------------------------------
         private void mButtonAddEntreprise_Click(object sender, EventArgs e)
         {
             AddEntreprise formAddEntreprise = new AddEntreprise();
@@ -54,6 +56,48 @@ namespace gestionstage.Forms
             Settings.Default.Save();
         }
 
+        private void mGridEntreprises_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Si clique sur la column dataGridViewTextBoxColumn3 (Afficher) et Pas sur le header
+            if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn3"].Index && e.RowIndex >= 0)
+            {
+                ViewEntreprise formViewEntreprise = new ViewEntreprise(mGridEntreprises.Rows[e.RowIndex].Cells[0].Value.ToString());
+                formViewEntreprise.Show();
+                this.Close();
+            }
+            // Si clique sur la column dataGridViewTextBoxColumn4 (Modifier) et Pas sur le header
+            else if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn4"].Index && e.RowIndex >= 0)
+            {
+                ModifyEntreprise formModifyEntreprise = new ModifyEntreprise(mGridEntreprises.Rows[e.RowIndex].Cells[0].Value.ToString());
+                formModifyEntreprise.Show();
+                this.Close();
+            }
+            // Si clique sur la column dataGridViewTextBoxColumn5 (Supprimer) et Pas sur le header
+            else if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn5"].Index && e.RowIndex >= 0)
+            {
+
+                DialogResult result = MetroMessageBox.Show(this, "Voulez vous vraiment supprimer l'entreprise ?", "Confirmer la suppréssion", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    DaoEntreprise.delete(mGridEntreprises.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    refreshGrid();
+                }
+                else if (result == DialogResult.No)
+                {
+                    // Ne rien faire
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
+        }
+
+
+        // --------------------------------------------------------------------
+        // Chargements de forms rapide TODO a delete
+        // --------------------------------------------------------------------
         private void mTestAddContrat_Click(object sender, EventArgs e)
         {
             AddContrat formAddContrat = new AddContrat();
@@ -83,10 +127,13 @@ namespace gestionstage.Forms
         }
 
 
-        // Les Refresh 
+        // --------------------------------------------------------------------
+        // Fonctions de refresh :
+        // --------------------------------------------------------------------
         private void refreshGrid()
         {
             //Chargement de la liste des entreprises
+            mGridEntreprises.RowTemplate.MinimumHeight = 35;
             mGridEntreprises.AutoGenerateColumns = false;
             mGridEntreprises.Columns[0].DataPropertyName = "siret";
             mGridEntreprises.Columns[1].DataPropertyName = "nom";
@@ -104,30 +151,6 @@ namespace gestionstage.Forms
                 _tile.Style = (MetroColorStyle)i;
                 _tile.Click += _tile_Click;
                 ConteneurCouleurs.Controls.Add(_tile);
-            }
-        }
-
-        private void mGridEntreprises_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Si clique sur la column dataGridViewTextBoxColumn3 (Afficher) et Pas sur le header
-            if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn3"].Index && e.RowIndex >= 0)                
-            {
-                ViewEntreprise formViewEntreprise = new ViewEntreprise(mGridEntreprises.Rows[e.RowIndex].Cells[0].Value.ToString());
-                formViewEntreprise.Show();
-                this.Close();
-            }
-            // Si clique sur la column dataGridViewTextBoxColumn4 (Modifier) et Pas sur le header
-            else if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn4"].Index && e.RowIndex >= 0)
-            {
-                ModifyEntreprise formModifyEntreprise = new ModifyEntreprise(mGridEntreprises.Rows[e.RowIndex].Cells[0].Value.ToString());
-                formModifyEntreprise.Show();
-                this.Close();
-            }
-            // Si clique sur la column dataGridViewTextBoxColumn5 (Supprimer) et Pas sur le header
-            else if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn5"].Index && e.RowIndex >= 0)
-            {
-                MetroMessageBox.Show(this, "Voulez vous vraiment supprimer l'entreprise ?", "Confirmer la suppréssion", MessageBoxButtons.YesNo);
-                MessageBox.Show(DialogResult);
             }
         }
     }

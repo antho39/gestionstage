@@ -86,7 +86,25 @@ namespace gestionstage.Classes
         }
 
         /// <summary>
-        /// Création d'une Entreprise
+        /// Création d'une Entreprise avant chargement BDD (sans l'ID)
+        /// </summary>
+        public Entreprise(string unSiret, string unNom, string uneAdresse, string unCp, string uneVille, string unTelephone, string unMail, string unCommentaire, Boolean unBool_envoye)
+        {
+            this.id = 0;
+            this.siret = unSiret;
+            this.nom = unNom;
+            this.adresse = uneAdresse;
+            this.codePostale = unCp;
+            this.ville = uneVille;
+            this.telephone = unTelephone;
+            this.mail = unMail;
+            this.commentaire = unCommentaire;
+            this.bool_envoye = unBool_envoye;
+            lesContrats = new List<Contrat>();
+        }
+
+        /// <summary>
+        /// Création d'une Entreprise objet chargement depuis BDD
         /// </summary>
         public Entreprise(int unId, string unSiret, string unNom, string uneAdresse, string unCp, string uneVille, string unTelephone, string unMail, string unCommentaire, Boolean unBool_envoye)
         {
