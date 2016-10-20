@@ -74,3 +74,6 @@ E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.Forms.ModifyEntre
 E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.Forms.ViewEntreprise.resources
 E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.Properties.Resources.resources
 E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.csproj.GenerateResource.Cache
+E:\Projet_VS\gestionstage3\gestionstage\bin\Debug\gestionstage.exe.config
+E:\Projet_VS\gestionstage3\gestionstage\obj\Debug\gestionstage.exe
+E:\Projet_VS\gestionstage3\gestionstage\obj\Debug\gestionstage.pdb
