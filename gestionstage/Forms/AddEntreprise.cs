@@ -142,12 +142,9 @@ namespace gestionstage.Forms
             {
                 //lsError.Add("Champ \"E-mail\" vide"); // Commenté car peut être null
             }
-            if (mTxBEntrepriseEmail.Text.IndexOf("@") > -1)
+            if ((mTxBEntrepriseEmail.Text.IndexOf("@") == -1) || (mTxBEntrepriseEmail.Text.IndexOf(".") == -1))
             {
-                if (mTxBEntrepriseEmail.Text.IndexOf(".", mTxBEntrepriseEmail.Text.IndexOf("@")) > mTxBEntrepriseEmail.Text.IndexOf("@"))
-                {
-                    lsError.Add("Champ \"E-mail\" n'est pas un E-mail valide");
-                }
+                lsError.Add("Champ \"E-mail\" n'est pas un E-mail valide");
             }
         }
 

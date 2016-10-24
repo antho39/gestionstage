@@ -218,12 +218,9 @@ namespace gestionstage.Forms
                 {
                     lsError.Add("Champ \"E-mail du tuteur\" vide");
                 }
-                if (mTxBTuteurEmail.Text.IndexOf("@") > -1)
+                if ((mTxBTuteurEmail.Text.IndexOf("@") == -1) || (mTxBTuteurEmail.Text.IndexOf(".") == -1))
                 {
-                    if (mTxBTuteurEmail.Text.IndexOf(".", mTxBTuteurEmail.Text.IndexOf("@")) > mTxBTuteurEmail.Text.IndexOf("@"))
-                    {
-                        lsError.Add("Champ \"E-mail du tuteur\" n'est pas un E-mail valide");
-                    }
+                    lsError.Add("Champ \"E-mail du tuteur\" n'est pas un E-mail valide");
                 }
             }
         }
