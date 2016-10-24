@@ -107,9 +107,10 @@ namespace gestionstage.Forms
             mGridContrat.Columns[3].DataPropertyName = "c_nom";
             mGridContrat.Columns[4].DataPropertyName = "s_nom";
             mGridContrat.Columns[5].DataPropertyName = "s_prenom";
-            mGridContrat.Columns[6].DataPropertyName = "date_debut";
-            mGridContrat.Columns[7].DataPropertyName = "date_fin";
-            mGridContrat.Columns[8].DataPropertyName = "appreciation";            
+            mGridContrat.Columns[6].DataPropertyName = "typecontrat_nom";
+            mGridContrat.Columns[7].DataPropertyName = "date_debut";
+            mGridContrat.Columns[8].DataPropertyName = "date_fin";
+            mGridContrat.Columns[9].DataPropertyName = "appreciation";            
             mGridContrat.DataSource = DaoContrat.dtReadById(lEntreprise.Id);
         }
 

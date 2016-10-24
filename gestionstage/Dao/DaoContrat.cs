@@ -24,7 +24,7 @@ namespace gestionstage.Dao
                 open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT contrats.id, typecontrats.nom, formations.nom AS c_nom, s_nom, s_prenom, t_nom, t_prenom, t_mail, t_telephone, date_debut, date_fin, contrats.commentaire, contrats.bool_envoye, appreciation, entreprises.nom, entreprise_id FROM contrats INNER JOIN formations ON contrats.formation_id = formations.id INNER JOIN typecontrats ON contrats.typecontrat_id = typecontrats.id INNER JOIN entreprises ON contrats.entreprise_id = entreprises.id WHERE entreprise_id =" + unId;
+                cmd.CommandText = "SELECT contrats.id, typecontrats.nom AS typecontrat_nom, formations.nom AS c_nom, s_nom, s_prenom, t_nom, t_prenom, t_mail, t_telephone, date_debut, date_fin, contrats.commentaire, contrats.bool_envoye, appreciation, entreprises.nom, entreprise_id FROM contrats INNER JOIN formations ON contrats.formation_id = formations.id INNER JOIN typecontrats ON contrats.typecontrat_id = typecontrats.id INNER JOIN entreprises ON contrats.entreprise_id = entreprises.id WHERE entreprise_id =" + unId;
 
                 MySqlDataReader res = cmd.ExecuteReader();
 

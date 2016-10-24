@@ -30,8 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,6 +40,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.mSMViewEntreprise = new MetroFramework.Components.MetroStyleManager(this.components);
             this.mLinkBack = new MetroFramework.Controls.MetroLink();
             this.mLabelTitle = new MetroFramework.Controls.MetroLabel();
@@ -67,6 +68,7 @@
             this.Classe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EleveNom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EleveFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TypeContrat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateDebut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Appreciation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -478,32 +480,33 @@
             this.Classe,
             this.EleveNom,
             this.EleveFirstName,
+            this.TypeContrat,
             this.DateDebut,
             this.DateFin,
             this.Appreciation,
             this.Modifier});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.mGridContrat.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.mGridContrat.DefaultCellStyle = dataGridViewCellStyle11;
             this.mGridContrat.EnableHeadersVisualStyles = false;
             this.mGridContrat.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.mGridContrat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mGridContrat.Location = new System.Drawing.Point(25, 403);
             this.mGridContrat.Name = "mGridContrat";
             this.mGridContrat.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.mGridContrat.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.mGridContrat.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.mGridContrat.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.mGridContrat.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mGridContrat.Size = new System.Drawing.Size(979, 342);
@@ -557,25 +560,33 @@
             this.EleveFirstName.HeaderText = "Prénom élève";
             this.EleveFirstName.Name = "EleveFirstName";
             // 
-            // DateDebut
+            // TypeContrat
             // 
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
-            this.DateDebut.DefaultCellStyle = dataGridViewCellStyle7;
+            this.TypeContrat.DefaultCellStyle = dataGridViewCellStyle7;
+            this.TypeContrat.HeaderText = "Type de contrat";
+            this.TypeContrat.MinimumWidth = 50;
+            this.TypeContrat.Name = "TypeContrat";
+            // 
+            // DateDebut
+            // 
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.DateDebut.DefaultCellStyle = dataGridViewCellStyle8;
             this.DateDebut.HeaderText = "Date de début";
             this.DateDebut.Name = "DateDebut";
             this.DateDebut.Width = 115;
             // 
             // DateFin
             // 
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            this.DateFin.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            this.DateFin.DefaultCellStyle = dataGridViewCellStyle9;
             this.DateFin.HeaderText = "Date de fin";
             this.DateFin.Name = "DateFin";
             // 
             // Appreciation
             // 
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            this.Appreciation.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            this.Appreciation.DefaultCellStyle = dataGridViewCellStyle10;
             this.Appreciation.HeaderText = "Appréciation";
             this.Appreciation.Name = "Appreciation";
             this.Appreciation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
@@ -653,6 +664,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Classe;
         private System.Windows.Forms.DataGridViewTextBoxColumn EleveNom;
         private System.Windows.Forms.DataGridViewTextBoxColumn EleveFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TypeContrat;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateDebut;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateFin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Appreciation;
