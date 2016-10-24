@@ -111,5 +111,16 @@ namespace gestionstage.Forms
             mGridContrat.Columns[7].DataPropertyName = "appreciation";            
             mGridContrat.DataSource = DaoContrat.dtReadById(lEntreprise.Id);
         }
+
+        private void mGridContrat_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Si clique sur la column Modifier (Modifier) et Pas sur le header
+            if (e.ColumnIndex == mGridContrat.Columns["Modifier"].Index && e.RowIndex >= 0)
+            {
+                ModifyContrat formModifyContrat = new ModifyContrat();
+                formModifyContrat.Show();
+                this.Close();
+            }            
+        }
     }
 }

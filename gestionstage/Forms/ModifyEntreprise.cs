@@ -176,6 +176,7 @@ namespace gestionstage.Forms
                     lsError.Add("Champ \"E-mail\" n'est pas un E-mail valide");
                 }
             }
+        }
 
         // --------------------------------------------------------------------
         // Fonctions privé :
