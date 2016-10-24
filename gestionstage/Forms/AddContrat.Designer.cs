@@ -65,6 +65,8 @@
             this.panelChoixContrat = new System.Windows.Forms.Panel();
             this.panelChoixDurée = new System.Windows.Forms.Panel();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.mTxBCommentaire = new MetroFramework.Controls.MetroTextBox();
+            this.mLabelCommentaire = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.mSMAddContrat)).BeginInit();
             this.panelChoixContrat.SuspendLayout();
             this.panelChoixDurée.SuspendLayout();
@@ -105,7 +107,7 @@
             this.mButtonAddContrat.ActiveControl = null;
             this.mButtonAddContrat.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.mButtonAddContrat.Location = new System.Drawing.Point(25, 595);
+            this.mButtonAddContrat.Location = new System.Drawing.Point(25, 839);
             this.mButtonAddContrat.Name = "mButtonAddContrat";
             this.mButtonAddContrat.Size = new System.Drawing.Size(979, 50);
             this.mButtonAddContrat.TabIndex = 31;
@@ -595,11 +597,59 @@
             this.panelChoixDurée.Size = new System.Drawing.Size(826, 25);
             this.panelChoixDurée.TabIndex = 52;
             // 
+            // mTxBCommentaire
+            // 
+            this.mTxBCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            // 
+            // 
+            // 
+            this.mTxBCommentaire.CustomButton.Image = null;
+            this.mTxBCommentaire.CustomButton.Location = new System.Drawing.Point(805, 1);
+            this.mTxBCommentaire.CustomButton.Name = "";
+            this.mTxBCommentaire.CustomButton.Size = new System.Drawing.Size(173, 173);
+            this.mTxBCommentaire.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.mTxBCommentaire.CustomButton.TabIndex = 1;
+            this.mTxBCommentaire.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.mTxBCommentaire.CustomButton.UseSelectable = true;
+            this.mTxBCommentaire.CustomButton.Visible = false;
+            this.mTxBCommentaire.Lines = new string[0];
+            this.mTxBCommentaire.Location = new System.Drawing.Point(25, 629);
+            this.mTxBCommentaire.MaxLength = 32767;
+            this.mTxBCommentaire.Multiline = true;
+            this.mTxBCommentaire.Name = "mTxBCommentaire";
+            this.mTxBCommentaire.PasswordChar = '\0';
+            this.mTxBCommentaire.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.mTxBCommentaire.SelectedText = "";
+            this.mTxBCommentaire.SelectionLength = 0;
+            this.mTxBCommentaire.SelectionStart = 0;
+            this.mTxBCommentaire.ShortcutsEnabled = true;
+            this.mTxBCommentaire.Size = new System.Drawing.Size(979, 175);
+            this.mTxBCommentaire.TabIndex = 54;
+            this.mTxBCommentaire.UseSelectable = true;
+            this.mTxBCommentaire.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.mTxBCommentaire.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
+            // mLabelCommentaire
+            // 
+            this.mLabelCommentaire.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mLabelCommentaire.AutoSize = true;
+            this.mLabelCommentaire.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.mLabelCommentaire.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.mLabelCommentaire.Location = new System.Drawing.Point(23, 594);
+            this.mLabelCommentaire.Name = "mLabelCommentaire";
+            this.mLabelCommentaire.Size = new System.Drawing.Size(129, 25);
+            this.mLabelCommentaire.TabIndex = 53;
+            this.mLabelCommentaire.Text = "Commentaire : ";
+            // 
             // AddContrat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 658);
+            this.ClientSize = new System.Drawing.Size(1024, 902);
+            this.Controls.Add(this.mTxBCommentaire);
+            this.Controls.Add(this.mLabelCommentaire);
             this.Controls.Add(this.panelChoixDurée);
             this.Controls.Add(this.panelChoixContrat);
             this.Controls.Add(this.mLabelDateEnd);
@@ -628,7 +678,7 @@
             this.Controls.Add(this.mLabelEntrepriseName);
             this.Controls.Add(this.mLinkBack);
             this.Controls.Add(this.mLabelTitle);
-            this.MinimumSize = new System.Drawing.Size(400, 658);
+            this.MinimumSize = new System.Drawing.Size(400, 902);
             this.Name = "AddContrat";
             ((System.ComponentModel.ISupportInitialize)(this.mSMAddContrat)).EndInit();
             this.panelChoixContrat.ResumeLayout(false);
@@ -678,5 +728,7 @@
         private System.Windows.Forms.Panel panelChoixContrat;
         private System.Windows.Forms.Panel panelChoixDurée;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private MetroFramework.Controls.MetroTextBox mTxBCommentaire;
+        private MetroFramework.Controls.MetroLabel mLabelCommentaire;
     }
 }
