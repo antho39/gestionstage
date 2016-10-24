@@ -76,7 +76,8 @@ namespace gestionstage.Forms
 
         private void mButtonAddContrat_Click(object sender, EventArgs e)
         {
-           int typeContrat = 0;
+            int typeContrat = 0;
+            int note = 0;
 
             if (mRadioButtonApprentissage.Checked == true)
             {
@@ -91,6 +92,27 @@ namespace gestionstage.Forms
                 typeContrat = 3;
             }
 
+            if (mRadioButtonNote0.Checked == true)
+            {
+                note = 0;
+            }
+            else if (mRadioButtonNote1.Checked == true)
+            {
+                note = 1;
+            }
+            else if (mRadioButtonNote2.Checked == true)
+            {
+                note = 2;
+            }
+            else if (mRadioButtonNote3.Checked == true)
+            {
+                note = 3;
+            }
+            else if (mRadioButtonNoteNonRenseigne.Checked == true)
+            {
+                note = 5; // TODO change la note non renseigné (null)
+            }
+
             CheckErrorSNom();
             CheckErrorSPrenom();
             CheckErrorTNom();
@@ -100,7 +122,7 @@ namespace gestionstage.Forms
 
             if (lsError.Count == 0)
             {
-                DaoContrat.create(new Contrat(typeContrat, Convert.ToInt16(mCbxStagiaireClassroom.SelectedValue.ToString()), mTxBStagiaireName.Text, mTxBStagiaireFirstName.Text, mTxBTuteurName.Text, mTxBTuteurFirstName.Text, mTxBTuteurEmail.Text, mTxBTuteurTelephone.Text, mDTDateBegin.Value, mDTDateEnd.Value, mTxBCommentaire.Text, 0, lEntreprise.Id)); // TODO
+                DaoContrat.create(new Contrat(typeContrat, Convert.ToInt16(mCbxStagiaireClassroom.SelectedValue.ToString()), mTxBStagiaireName.Text, mTxBStagiaireFirstName.Text, mTxBTuteurName.Text, mTxBTuteurFirstName.Text, mTxBTuteurEmail.Text, mTxBTuteurTelephone.Text, mDTDateBegin.Value, mDTDateEnd.Value, mTxBCommentaire.Text, note, lEntreprise.Id));
 
                 ViewEntreprise FormViewEntreprise = new ViewEntreprise();
                 FormViewEntreprise.Show();
@@ -129,6 +151,7 @@ namespace gestionstage.Forms
             mTxBEntrepriseName.Text = lEntreprise.Nom;
             mRadioButtonApprentissage.Select();
             mRadioButton2ans.Select();
+            mRadioButtonNoteNonRenseigne.Select();
 
             List<Formation> lesFormations = DaoFormation.readAll();
             mCbxStagiaireClassroom.ValueMember = "id";
