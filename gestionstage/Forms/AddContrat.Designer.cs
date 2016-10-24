@@ -68,12 +68,12 @@
             this.mTxBCommentaire = new MetroFramework.Controls.MetroTextBox();
             this.mLabelCommentaire = new MetroFramework.Controls.MetroLabel();
             this.panelChoixNote = new System.Windows.Forms.Panel();
+            this.mLabelNote = new MetroFramework.Controls.MetroLabel();
+            this.mRadioButtonNoteNonRenseigne = new MetroFramework.Controls.MetroRadioButton();
+            this.mRadioButtonNote3 = new MetroFramework.Controls.MetroRadioButton();
             this.mRadioButtonNote0 = new MetroFramework.Controls.MetroRadioButton();
             this.mRadioButtonNote1 = new MetroFramework.Controls.MetroRadioButton();
             this.mRadioButtonNote2 = new MetroFramework.Controls.MetroRadioButton();
-            this.mRadioButtonNote3 = new MetroFramework.Controls.MetroRadioButton();
-            this.mRadioButtonNoteNonRenseigne = new MetroFramework.Controls.MetroRadioButton();
-            this.mLabelNote = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.mSMAddContrat)).BeginInit();
             this.panelChoixContrat.SuspendLayout();
             this.panelChoixDurée.SuspendLayout();
@@ -645,7 +645,7 @@
             this.mLabelCommentaire.AutoSize = true;
             this.mLabelCommentaire.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.mLabelCommentaire.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mLabelCommentaire.Location = new System.Drawing.Point(23, 594);
+            this.mLabelCommentaire.Location = new System.Drawing.Point(25, 594);
             this.mLabelCommentaire.Name = "mLabelCommentaire";
             this.mLabelCommentaire.Size = new System.Drawing.Size(129, 25);
             this.mLabelCommentaire.TabIndex = 53;
@@ -663,6 +663,38 @@
             this.panelChoixNote.Name = "panelChoixNote";
             this.panelChoixNote.Size = new System.Drawing.Size(826, 25);
             this.panelChoixNote.TabIndex = 53;
+            // 
+            // mLabelNote
+            // 
+            this.mLabelNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.mLabelNote.AutoSize = true;
+            this.mLabelNote.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.mLabelNote.Location = new System.Drawing.Point(0, 0);
+            this.mLabelNote.Name = "mLabelNote";
+            this.mLabelNote.Size = new System.Drawing.Size(49, 19);
+            this.mLabelNote.TabIndex = 55;
+            this.mLabelNote.Text = "Note : ";
+            // 
+            // mRadioButtonNoteNonRenseigne
+            // 
+            this.mRadioButtonNoteNonRenseigne.AutoSize = true;
+            this.mRadioButtonNoteNonRenseigne.Location = new System.Drawing.Point(195, 4);
+            this.mRadioButtonNoteNonRenseigne.Name = "mRadioButtonNoteNonRenseigne";
+            this.mRadioButtonNoteNonRenseigne.Size = new System.Drawing.Size(100, 15);
+            this.mRadioButtonNoteNonRenseigne.TabIndex = 52;
+            this.mRadioButtonNoteNonRenseigne.Text = "Non renseigné";
+            this.mRadioButtonNoteNonRenseigne.UseSelectable = true;
+            // 
+            // mRadioButtonNote3
+            // 
+            this.mRadioButtonNote3.AutoSize = true;
+            this.mRadioButtonNote3.Location = new System.Drawing.Point(160, 4);
+            this.mRadioButtonNote3.Name = "mRadioButtonNote3";
+            this.mRadioButtonNote3.Size = new System.Drawing.Size(29, 15);
+            this.mRadioButtonNote3.TabIndex = 51;
+            this.mRadioButtonNote3.Text = "3";
+            this.mRadioButtonNote3.UseSelectable = true;
             // 
             // mRadioButtonNote0
             // 
@@ -693,38 +725,6 @@
             this.mRadioButtonNote2.TabIndex = 50;
             this.mRadioButtonNote2.Text = "2";
             this.mRadioButtonNote2.UseSelectable = true;
-            // 
-            // mRadioButtonNote3
-            // 
-            this.mRadioButtonNote3.AutoSize = true;
-            this.mRadioButtonNote3.Location = new System.Drawing.Point(160, 4);
-            this.mRadioButtonNote3.Name = "mRadioButtonNote3";
-            this.mRadioButtonNote3.Size = new System.Drawing.Size(29, 15);
-            this.mRadioButtonNote3.TabIndex = 51;
-            this.mRadioButtonNote3.Text = "3";
-            this.mRadioButtonNote3.UseSelectable = true;
-            // 
-            // mRadioButtonNoteNonRenseigne
-            // 
-            this.mRadioButtonNoteNonRenseigne.AutoSize = true;
-            this.mRadioButtonNoteNonRenseigne.Location = new System.Drawing.Point(195, 4);
-            this.mRadioButtonNoteNonRenseigne.Name = "mRadioButtonNoteNonRenseigne";
-            this.mRadioButtonNoteNonRenseigne.Size = new System.Drawing.Size(100, 15);
-            this.mRadioButtonNoteNonRenseigne.TabIndex = 52;
-            this.mRadioButtonNoteNonRenseigne.Text = "Non renseigné";
-            this.mRadioButtonNoteNonRenseigne.UseSelectable = true;
-            // 
-            // mLabelNote
-            // 
-            this.mLabelNote.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.mLabelNote.AutoSize = true;
-            this.mLabelNote.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.mLabelNote.Location = new System.Drawing.Point(0, 0);
-            this.mLabelNote.Name = "mLabelNote";
-            this.mLabelNote.Size = new System.Drawing.Size(49, 19);
-            this.mLabelNote.TabIndex = 55;
-            this.mLabelNote.Text = "Note : ";
             // 
             // AddContrat
             // 

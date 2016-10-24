@@ -81,5 +81,32 @@ namespace gestionstage.Dao
 
             }
         }
+
+        public static Contrat readOne(string id)
+        {
+            Contrat leContrat = null;
+
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM entreprises WHERE id=" + id;
+
+                MySqlDataReader res = cmd.ExecuteReader();
+
+                res.Read();
+                leContrat = new Contrat(Convert.ToInt16(res["id"]), Convert.ToInt16(res["typecontrat_id"]), Convert.ToInt16(res["formation_id"]), (string)res["s_nom"], (string)res["s_prenom"], (string)res["t_nom"], (string)res["t_prenom"], (string)res["t_mail"], (string)res["t_telephone"], (DateTime)res["date_debut"], (DateTime)res["date_fin"], (string)res["commentaire"], Convert.ToInt16(res["appreciation"]), Convert.ToInt16(res["entreprise_id"]));
+                close();
+
+                return leContrat;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+                return leContrat;
+            }
+        }
     }
 }

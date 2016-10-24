@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gestionstage.Classes
 {
-    class Entreprise
+    public class Entreprise
     {
         private int id;
         public int Id

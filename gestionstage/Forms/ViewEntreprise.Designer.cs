@@ -61,6 +61,7 @@
             this.mTxBEntrepriseName = new MetroFramework.Controls.MetroTextBox();
             this.mLabelEntrepriseName = new MetroFramework.Controls.MetroLabel();
             this.mGridContrat = new MetroFramework.Controls.MetroGrid();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TuteurName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TuteurFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Classe = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -471,6 +472,7 @@
             this.mGridContrat.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.mGridContrat.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mGridContrat.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.TuteurName,
             this.TuteurFirstName,
             this.Classe,
@@ -507,6 +509,13 @@
             this.mGridContrat.Size = new System.Drawing.Size(979, 342);
             this.mGridContrat.TabIndex = 53;
             this.mGridContrat.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mGridContrat_CellContentClick);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "id";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // TuteurName
             // 
@@ -638,6 +647,7 @@
         private MetroFramework.Controls.MetroTextBox mTxBEntrepriseName;
         private MetroFramework.Controls.MetroLabel mLabelEntrepriseName;
         private MetroFramework.Controls.MetroGrid mGridContrat;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn TuteurName;
         private System.Windows.Forms.DataGridViewTextBoxColumn TuteurFirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Classe;

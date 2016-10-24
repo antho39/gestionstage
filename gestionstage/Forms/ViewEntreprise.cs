@@ -101,14 +101,15 @@ namespace gestionstage.Forms
             mGridContrat.RowTemplate.MinimumHeight = 35;
             mGridContrat.AutoGenerateColumns = false;
             // Fait le lien entre la colonne et le noms des colonnes du DataTable pour s'auto remplir
-            mGridContrat.Columns[0].DataPropertyName = "t_nom";
-            mGridContrat.Columns[1].DataPropertyName = "t_prenom";
-            mGridContrat.Columns[2].DataPropertyName = "c_nom";
-            mGridContrat.Columns[3].DataPropertyName = "s_nom";
-            mGridContrat.Columns[4].DataPropertyName = "s_prenom";
-            mGridContrat.Columns[5].DataPropertyName = "date_debut";
-            mGridContrat.Columns[6].DataPropertyName = "date_fin";
-            mGridContrat.Columns[7].DataPropertyName = "appreciation";            
+            mGridContrat.Columns[0].DataPropertyName = "id"; //Attention Colonne Hide
+            mGridContrat.Columns[1].DataPropertyName = "t_nom";
+            mGridContrat.Columns[2].DataPropertyName = "t_prenom";
+            mGridContrat.Columns[3].DataPropertyName = "c_nom";
+            mGridContrat.Columns[4].DataPropertyName = "s_nom";
+            mGridContrat.Columns[5].DataPropertyName = "s_prenom";
+            mGridContrat.Columns[6].DataPropertyName = "date_debut";
+            mGridContrat.Columns[7].DataPropertyName = "date_fin";
+            mGridContrat.Columns[8].DataPropertyName = "appreciation";            
             mGridContrat.DataSource = DaoContrat.dtReadById(lEntreprise.Id);
         }
 
@@ -117,7 +118,7 @@ namespace gestionstage.Forms
             // Si clique sur la column Modifier (Modifier) et Pas sur le header
             if (e.ColumnIndex == mGridContrat.Columns["Modifier"].Index && e.RowIndex >= 0)
             {
-                ModifyContrat formModifyContrat = new ModifyContrat();
+                ModifyContrat formModifyContrat = new ModifyContrat(DaoContrat.readOne(mGridContrat.Rows[e.RowIndex].Cells[0].Value.ToString()), lEntreprise);
                 formModifyContrat.Show();
                 this.Close();
             }            

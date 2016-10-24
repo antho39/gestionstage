@@ -77,3 +77,21 @@ E:\Projet_VS\gestionstage2\gestionstage\obj\Debug\gestionstage.csproj.GenerateRe
 E:\Projet_VS\gestionstage3\gestionstage\bin\Debug\gestionstage.exe.config
 E:\Projet_VS\gestionstage3\gestionstage\obj\Debug\gestionstage.exe
 E:\Projet_VS\gestionstage3\gestionstage\obj\Debug\gestionstage.pdb
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\gestionstage.exe.config
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.exe
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.pdb
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.csprojResolveAssemblyReference.cache
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.AddContrat.resources
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.AddEntreprise.resources
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ListEntreprise.resources
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ModifyContrat.resources
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ModifyEntreprise.resources
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ViewEntreprise.resources
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.Properties.Resources.resources
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.csproj.GenerateResource.Cache
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\gestionstage.exe
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\gestionstage.pdb
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\MetroFramework.Design.dll
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\MetroFramework.dll
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\MetroFramework.Fonts.dll
+Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\MySql.Data.dll
