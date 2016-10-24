@@ -24,7 +24,7 @@ namespace gestionstage.Dao
                 open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT contrats.id, bool_apprentissage, s_nom, s_prenom, t_nom, t_prenom, t_mail, t_telephone, date_debut, date_fin, commentaire, bool_envoye, appreciation, entreprise_id, formations.nom AS c_nom FROM contrats INNER JOIN formations ON contrats.formation_id = formations.id WHERE entreprise_id =" + unId;
+                cmd.CommandText = "SELECT contrats.id, typecontrats.nom, formations.nom AS c_nom, s_nom, s_prenom, t_nom, t_prenom, t_mail, t_telephone, date_debut, date_fin, contrats.commentaire, contrats.bool_envoye, appreciation, entreprises.nom, entreprise_id FROM contrats INNER JOIN formations ON contrats.formation_id = formations.id INNER JOIN typecontrats ON contrats.typecontrat_id = typecontrats.id INNER JOIN entreprises ON contrats.entreprise_id = entreprises.id WHERE entreprise_id =" + unId;
 
                 MySqlDataReader res = cmd.ExecuteReader();
 
@@ -39,6 +39,47 @@ namespace gestionstage.Dao
             }
 
             return dtContrat;
+        }
+
+        public static void create(Contrat unContrat)
+        {
+            try
+            {
+                open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+
+                cmd.CommandText = "INSERT INTO contrats(typecontrat_id, formation_id, s_nom, s_prenom, t_nom, t_prenom, t_mail, t_telephone, date_debut, date_fin, commentaire, bool_envoye, appreciation, entreprise_id) VALUES (@typecontrat_id, @formation_id, @s_nom, @s_prenom, @t_nom, @t_prenom, @t_mail, @t_telephone, @date_debut, @date_fin, @commentaire, @bool_envoye, @appreciation, @entreprise_id)";
+                
+                cmd.Prepare();
+                
+                cmd.Parameters.AddWithValue("@typecontrat_id", unContrat.Typecontrat_id);
+                cmd.Parameters.AddWithValue("@formation_id", unContrat.Formation_id);
+                cmd.Parameters.AddWithValue("@s_nom", unContrat.S_nom);
+                cmd.Parameters.AddWithValue("@s_prenom", unContrat.S_prenom);
+                cmd.Parameters.AddWithValue("@t_nom", unContrat.T_nom);
+                cmd.Parameters.AddWithValue("@t_prenom", unContrat.T_prenom);
+                cmd.Parameters.AddWithValue("@t_mail", unContrat.T_mail);
+                cmd.Parameters.AddWithValue("@t_telephone", unContrat.T_telephone);
+                cmd.Parameters.AddWithValue("@date_debut", unContrat.Date_debut);
+                cmd.Parameters.AddWithValue("@date_fin", unContrat.Date_fin);
+                cmd.Parameters.AddWithValue("@commentaire", unContrat.Commentaire);
+                cmd.Parameters.AddWithValue("@bool_envoye", unContrat.Bool_envoye);
+                cmd.Parameters.AddWithValue("@appreciation", unContrat.Appreciation);
+                cmd.Parameters.AddWithValue("@entreprise_id", unContrat.Entreprise_id);
+
+                cmd.ExecuteNonQuery();
+
+                unContrat.Id = (int)cmd.LastInsertedId;
+
+                close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+            }
         }
     }
 }

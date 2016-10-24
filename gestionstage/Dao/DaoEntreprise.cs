@@ -86,10 +86,10 @@ namespace gestionstage.Dao
                 cmd.Parameters.AddWithValue("@siret", uneEntreprise.Siret);
                 cmd.Parameters.AddWithValue("@nom", uneEntreprise.Nom);
                 cmd.Parameters.AddWithValue("@adresse", uneEntreprise.Adresse);
-                cmd.Parameters.AddWithValue("@cp", uneEntreprise.CodePostale);
+                cmd.Parameters.AddWithValue("@cp", uneEntreprise.Cp);
                 cmd.Parameters.AddWithValue("@ville", uneEntreprise.Ville);
                 cmd.Parameters.AddWithValue("@telephone", uneEntreprise.Telephone);
-                cmd.Parameters.AddWithValue("@email", uneEntreprise.Mail);
+                cmd.Parameters.AddWithValue("@email", uneEntreprise.Email);
                 cmd.Parameters.AddWithValue("@commentaire", uneEntreprise.Commentaire);
                 cmd.Parameters.AddWithValue("@bool_envoye", uneEntreprise.Bool_envoye);
 
@@ -121,10 +121,10 @@ namespace gestionstage.Dao
                 cmd.Parameters.AddWithValue("@siret", uneEntreprise.Siret);
                 cmd.Parameters.AddWithValue("@nom", uneEntreprise.Nom);
                 cmd.Parameters.AddWithValue("@adresse", uneEntreprise.Adresse);
-                cmd.Parameters.AddWithValue("@cp", uneEntreprise.CodePostale);
+                cmd.Parameters.AddWithValue("@cp", uneEntreprise.Cp);
                 cmd.Parameters.AddWithValue("@ville", uneEntreprise.Ville);
                 cmd.Parameters.AddWithValue("@telephone", uneEntreprise.Telephone);
-                cmd.Parameters.AddWithValue("@email", uneEntreprise.Mail);
+                cmd.Parameters.AddWithValue("@email", uneEntreprise.Email);
                 cmd.Parameters.AddWithValue("@commentaire", uneEntreprise.Commentaire);
                 cmd.Parameters.AddWithValue("@bool_envoye", uneEntreprise.Bool_envoye);
 

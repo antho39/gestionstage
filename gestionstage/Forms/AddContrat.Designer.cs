@@ -58,12 +58,13 @@
             this.mDTDateEnd = new MetroFramework.Controls.MetroDateTime();
             this.mRadioButtonApprentissage = new MetroFramework.Controls.MetroRadioButton();
             this.mRadioButtonStage = new MetroFramework.Controls.MetroRadioButton();
-            this.metroRadioButton3 = new MetroFramework.Controls.MetroRadioButton();
+            this.mRadioButtonContratPro = new MetroFramework.Controls.MetroRadioButton();
             this.mRadioButton6semaines = new MetroFramework.Controls.MetroRadioButton();
             this.mRadioButton1an = new MetroFramework.Controls.MetroRadioButton();
             this.mRadioButton2ans = new MetroFramework.Controls.MetroRadioButton();
             this.panelChoixContrat = new System.Windows.Forms.Panel();
             this.panelChoixDurée = new System.Windows.Forms.Panel();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.mSMAddContrat)).BeginInit();
             this.panelChoixContrat.SuspendLayout();
             this.panelChoixDurée.SuspendLayout();
@@ -111,6 +112,7 @@
             this.mButtonAddContrat.Text = "Ajouter le contrat";
             this.mButtonAddContrat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.mButtonAddContrat.UseSelectable = true;
+            this.mButtonAddContrat.Click += new System.EventHandler(this.mButtonAddContrat_Click);
             // 
             // mTxBTuteurEmail
             // 
@@ -345,12 +347,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.mCbxStagiaireClassroom.FormattingEnabled = true;
             this.mCbxStagiaireClassroom.ItemHeight = 23;
-            this.mCbxStagiaireClassroom.Items.AddRange(new object[] {
-            "",
-            "SIO 1 TP",
-            "SIO 1 A",
-            "SIO 2 TP",
-            "SIO 2 A"});
             this.mCbxStagiaireClassroom.Location = new System.Drawing.Point(175, 230);
             this.mCbxStagiaireClassroom.Name = "mCbxStagiaireClassroom";
             this.mCbxStagiaireClassroom.Size = new System.Drawing.Size(828, 29);
@@ -474,6 +470,7 @@
             this.mDTDateBegin.TabIndex = 40;
             this.mDTDateBegin.UseStyleColors = true;
             this.mDTDateBegin.Value = new System.DateTime(2016, 10, 13, 0, 0, 0, 0);
+            this.mDTDateBegin.ValueChanged += new System.EventHandler(this.mDTDateBegin_ValueChanged);
             // 
             // mLabelContrat
             // 
@@ -524,6 +521,7 @@
             this.mRadioButtonApprentissage.TabIndex = 45;
             this.mRadioButtonApprentissage.Text = "Contrat d\'Apprentissage";
             this.mRadioButtonApprentissage.UseSelectable = true;
+            this.mRadioButtonApprentissage.CheckedChanged += new System.EventHandler(this.mRadioButtonApprentissage_CheckedChanged);
             // 
             // mRadioButtonStage
             // 
@@ -534,16 +532,18 @@
             this.mRadioButtonStage.TabIndex = 46;
             this.mRadioButtonStage.Text = "Convention de Stage";
             this.mRadioButtonStage.UseSelectable = true;
+            this.mRadioButtonStage.CheckedChanged += new System.EventHandler(this.mRadioButtonStage_CheckedChanged);
             // 
-            // metroRadioButton3
+            // mRadioButtonContratPro
             // 
-            this.metroRadioButton3.AutoSize = true;
-            this.metroRadioButton3.Location = new System.Drawing.Point(299, 5);
-            this.metroRadioButton3.Name = "metroRadioButton3";
-            this.metroRadioButton3.Size = new System.Drawing.Size(188, 15);
-            this.metroRadioButton3.TabIndex = 47;
-            this.metroRadioButton3.Text = "Contrat de Professionnalisation";
-            this.metroRadioButton3.UseSelectable = true;
+            this.mRadioButtonContratPro.AutoSize = true;
+            this.mRadioButtonContratPro.Location = new System.Drawing.Point(299, 5);
+            this.mRadioButtonContratPro.Name = "mRadioButtonContratPro";
+            this.mRadioButtonContratPro.Size = new System.Drawing.Size(188, 15);
+            this.mRadioButtonContratPro.TabIndex = 47;
+            this.mRadioButtonContratPro.Text = "Contrat de Professionnalisation";
+            this.mRadioButtonContratPro.UseSelectable = true;
+            this.mRadioButtonContratPro.CheckedChanged += new System.EventHandler(this.mRadioButtonContratPro_CheckedChanged);
             // 
             // mRadioButton6semaines
             // 
@@ -579,7 +579,7 @@
             // 
             this.panelChoixContrat.Controls.Add(this.mRadioButtonApprentissage);
             this.panelChoixContrat.Controls.Add(this.mRadioButtonStage);
-            this.panelChoixContrat.Controls.Add(this.metroRadioButton3);
+            this.panelChoixContrat.Controls.Add(this.mRadioButtonContratPro);
             this.panelChoixContrat.Location = new System.Drawing.Point(175, 125);
             this.panelChoixContrat.Name = "panelChoixContrat";
             this.panelChoixContrat.Size = new System.Drawing.Size(826, 25);
@@ -669,7 +669,7 @@
         private MetroFramework.Controls.MetroDateTime mDTDateEnd;
         private MetroFramework.Controls.MetroLabel mLabelDateBegin;
         private MetroFramework.Controls.MetroLabel mLabelContrat;
-        private MetroFramework.Controls.MetroRadioButton metroRadioButton3;
+        private MetroFramework.Controls.MetroRadioButton mRadioButtonContratPro;
         private MetroFramework.Controls.MetroRadioButton mRadioButtonStage;
         private MetroFramework.Controls.MetroRadioButton mRadioButtonApprentissage;
         private MetroFramework.Controls.MetroRadioButton mRadioButton2ans;
@@ -677,5 +677,6 @@
         private MetroFramework.Controls.MetroRadioButton mRadioButton6semaines;
         private System.Windows.Forms.Panel panelChoixContrat;
         private System.Windows.Forms.Panel panelChoixDurée;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }

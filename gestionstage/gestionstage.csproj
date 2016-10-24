@@ -79,9 +79,11 @@
   <ItemGroup>
     <Compile Include="Classes\Contrat.cs" />
     <Compile Include="Classes\Entreprise.cs" />
+    <Compile Include="Classes\Formation.cs" />
     <Compile Include="Dao\Dao.cs" />
     <Compile Include="Dao\DaoContrat.cs" />
     <Compile Include="Dao\DaoEntreprise.cs" />
+    <Compile Include="Dao\DaoFormation.cs" />
     <Compile Include="Forms\AddContrat.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,15 +175,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\tab_supprimer.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="LocalServerApp.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="LocalServerApp_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>LocalServerApp.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

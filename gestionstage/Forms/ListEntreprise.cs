@@ -13,6 +13,7 @@ using gestionstage.Properties;
 using MetroFramework;
 using MetroFramework.Controls;
 using MetroFramework.Forms;
+using gestionstage.Classes;
 using gestionstage.Dao;
 
 namespace gestionstage.Forms
@@ -22,7 +23,7 @@ namespace gestionstage.Forms
         private BindingSource bindingSListEntreprise = new BindingSource();
 
         public ListEntreprise()
-        {
+        {         
             InitializeComponent();
             this.StyleManager = mSMListEntreprise;
             this.StyleManager.Style = (MetroFramework.MetroColorStyle)Settings.Default.Style;

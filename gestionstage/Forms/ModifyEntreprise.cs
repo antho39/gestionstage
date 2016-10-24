@@ -43,11 +43,11 @@ namespace gestionstage.Forms
             mTxBEntrepriseSiret.Text = lEntreprise.Siret;
             mTxBEntrepriseName.Text = lEntreprise.Nom;
             mTxBEntrepriseAdresse.Text = lEntreprise.Adresse;
-            mTxBEntreprisePostalCode.Text = lEntreprise.CodePostale;
+            mTxBEntreprisePostalCode.Text = lEntreprise.Cp;
             mTxBEntrepriseCity.Text = lEntreprise.Ville;
             mTxBEntrepriseTelephone.Text = lEntreprise.Telephone;
             if (mTxBEntrepriseTelephone.Text == "") { mTxBEntrepriseTelephone.Text = "Non renseigné"; }
-            mTxBEntrepriseEmail.Text = lEntreprise.Mail;
+            mTxBEntrepriseEmail.Text = lEntreprise.Email;
             if (mTxBEntrepriseEmail.Text == "") { mTxBEntrepriseEmail.Text = "Non renseigné"; }
         }
 

@@ -36,11 +36,11 @@ namespace gestionstage.Classes
             set { adresse = value; }
         }
 
-        private string codePostale;
-        public string CodePostale
+        private string cp;
+        public string Cp
         {
-            get { return codePostale; }
-            set { codePostale = value; }
+            get { return cp; }
+            set { cp = value; }
         }
 
         private string ville;
@@ -57,11 +57,11 @@ namespace gestionstage.Classes
             set { telephone = value; }
         }
 
-        private string mail;
-        public string Mail
+        private string email;
+        public string Email
         {
-            get { return mail; }
-            set { mail = value; }
+            get { return email; }
+            set { email = value; }
         }
 
         private string commentaire;
@@ -94,10 +94,10 @@ namespace gestionstage.Classes
             this.siret = unSiret;
             this.nom = unNom;
             this.adresse = uneAdresse;
-            this.codePostale = unCp;
+            this.cp = unCp;
             this.ville = uneVille;
             this.telephone = unTelephone;
-            this.mail = unMail;
+            this.email = unMail;
             this.commentaire = unCommentaire;
             this.bool_envoye = unBool_envoye;
             lesContrats = new List<Contrat>();
@@ -112,10 +112,10 @@ namespace gestionstage.Classes
             this.siret = unSiret;
             this.nom = unNom;
             this.adresse = uneAdresse;
-            this.codePostale = unCp;
+            this.cp = unCp;
             this.ville = uneVille;
             this.telephone = unTelephone;
-            this.mail = unMail;
+            this.email = unMail;
             this.commentaire = unCommentaire;
             this.bool_envoye = unBool_envoye;
             lesContrats = new List<Contrat>();
