@@ -13,7 +13,7 @@ namespace gestionstage.Dao
     {
         //Attributs
         protected static MySqlConnection conn = null;
-        // Commentaire de test
+        
         //Méthodes
         protected static void open()
         {

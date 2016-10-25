@@ -78,13 +78,6 @@ namespace gestionstage.Classes
             set { bool_envoye = value; }
         }
 
-        private List<Contrat> lesContrats;
-        public List<Contrat> LesContrats
-        {
-            get { return lesContrats; }
-            set { lesContrats = value; }
-        }
-
         /// <summary>
         /// Création d'une Entreprise avant chargement BDD (sans l'ID)
         /// </summary>
@@ -100,7 +93,6 @@ namespace gestionstage.Classes
             this.email = unMail;
             this.commentaire = unCommentaire;
             this.bool_envoye = unBool_envoye;
-            lesContrats = new List<Contrat>();
         }
 
         /// <summary>
@@ -118,7 +110,6 @@ namespace gestionstage.Classes
             this.email = unMail;
             this.commentaire = unCommentaire;
             this.bool_envoye = unBool_envoye;
-            lesContrats = new List<Contrat>();
         }
     }
 }

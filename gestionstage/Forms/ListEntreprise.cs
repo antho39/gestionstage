@@ -76,7 +76,6 @@ namespace gestionstage.Forms
             // Si clique sur la column dataGridViewTextBoxColumn5 (Supprimer) et Pas sur le header
             else if (e.ColumnIndex == mGridEntreprises.Columns["dataGridViewTextBoxColumn5"].Index && e.RowIndex >= 0)
             {
-
                 DialogResult result = MetroMessageBox.Show(this, "Voulez vous vraiment supprimer l'entreprise ?", "Confirmer la suppréssion", MessageBoxButtons.YesNo);
 
                 if (result == DialogResult.Yes)
@@ -94,40 +93,7 @@ namespace gestionstage.Forms
                 }
             }
         }
-
-
-        // --------------------------------------------------------------------
-        // Chargements de forms rapide TODO a delete
-        // --------------------------------------------------------------------
-        private void mTestAddContrat_Click(object sender, EventArgs e)
-        {
-            AddContrat formAddContrat = new AddContrat();
-            formAddContrat.Show();
-            this.Close();
-        }
-
-        private void mTESTAddEntreprise_Click(object sender, EventArgs e)
-        {
-            AddEntreprise formAddEntreprise = new AddEntreprise();
-            formAddEntreprise.Show();
-            this.Close();
-        }
-
-        private void mTESTModifyEntreprise_Click(object sender, EventArgs e)
-        {
-            ModifyEntreprise formModifyEntreprise = new ModifyEntreprise();
-            formModifyEntreprise.Show();
-            this.Close();
-        }
-
-        private void mTESTViewEntreprise_Click(object sender, EventArgs e)
-        {
-            ViewEntreprise formViewEntreprise = new ViewEntreprise();
-            formViewEntreprise.Show();
-            this.Close();
-        }
-
-
+    
         // --------------------------------------------------------------------
         // Fonctions de refresh :
         // --------------------------------------------------------------------

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="gestionstage.Classes.Contrat">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACBBCQAAAQkAICgAACCsAAAAhAAFQAAABUAAAAAgQ=</HashCode>
+      <FileName>Classes\Contrat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Classes.Entreprise">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgCABAAACAQAAAgAAAQIEAAECBAAABAAIAAQACIAgA=</HashCode>
+      <FileName>Classes\Entreprise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Classes.Formation">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAEAAAAIgAAACAAAAAAAAAAAgAAAgA=</HashCode>
+      <FileName>Classes\Formation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Dao.Dao">
+    <Position X="2.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAQAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>Dao\Dao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Dao.DaoContrat">
+    <Position X="0.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAgBAAAAAAAA=</HashCode>
+      <FileName>Dao\DaoContrat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Dao.DaoEntreprise">
+    <Position X="2.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAQAAAAAAAAIAAABAAAAEAAA=</HashCode>
+      <FileName>Dao\DaoEntreprise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Dao.DaoFormation">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Dao\DaoFormation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Forms.AddContrat">
+    <Position X="7.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQQFAJARNCgDAYxnCAGELQGCoQEEQsAogBAADggCkAg=</HashCode>
+      <FileName>Forms\AddContrat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Forms.AddEntreprise">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASAAGAATQqAAAEQKQESQIAAjAQAABEAAADAAAAgAYAg=</HashCode>
+      <FileName>Forms\AddEntreprise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Forms.ListEntreprise">
+    <Position X="6" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAiEACQQDBMAAKJAESAAAACgCiAAAEABAAAEgAAAAQ=</HashCode>
+      <FileName>Forms\ListEntreprise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Forms.ModifyContrat">
+    <Position X="9.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQQFgBARNCgDAYxnCAGELQGCoQEEAsCqgBAADhgCkAg=</HashCode>
+      <FileName>Forms\ModifyContrat.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Forms.ModifyEntreprise">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASAAGAATAqEAAEQAQEWQIAAjASAABmAAADAAAQgAYAg=</HashCode>
+      <FileName>Forms\ModifyEntreprise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Forms.ViewEntreprise">
+    <Position X="6" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ASACDIATAiEAAPQAQEKQQgAGAQAAxmAABCCIAUAAIAA=</HashCode>
+      <FileName>Forms\ViewEntreprise.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Program">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Properties.Resources">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAgQAAABEAACAQAQAAAABIAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="gestionstage.Properties.Settings">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAABAAAAABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

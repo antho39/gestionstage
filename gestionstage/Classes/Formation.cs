@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace gestionstage.Classes
 {
-    class Formation
+    public class Formation
     {
         private int id;
         public int Id
