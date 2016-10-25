@@ -359,7 +359,7 @@
             this.mCbxStagiaireClassroom.ItemHeight = 23;
             this.mCbxStagiaireClassroom.Location = new System.Drawing.Point(175, 230);
             this.mCbxStagiaireClassroom.Name = "mCbxStagiaireClassroom";
-            this.mCbxStagiaireClassroom.Size = new System.Drawing.Size(828, 29);
+            this.mCbxStagiaireClassroom.Size = new System.Drawing.Size(829, 29);
             this.mCbxStagiaireClassroom.TabIndex = 33;
             this.mCbxStagiaireClassroom.UseSelectable = true;
             // 
@@ -476,7 +476,7 @@
             this.mDTDateBegin.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.mDTDateBegin.MinimumSize = new System.Drawing.Size(0, 29);
             this.mDTDateBegin.Name = "mDTDateBegin";
-            this.mDTDateBegin.Size = new System.Drawing.Size(828, 29);
+            this.mDTDateBegin.Size = new System.Drawing.Size(829, 29);
             this.mDTDateBegin.TabIndex = 40;
             this.mDTDateBegin.UseStyleColors = true;
             this.mDTDateBegin.Value = new System.DateTime(2016, 10, 13, 0, 0, 0, 0);
@@ -518,7 +518,7 @@
             this.mDTDateEnd.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.mDTDateEnd.MinimumSize = new System.Drawing.Size(0, 29);
             this.mDTDateEnd.Name = "mDTDateEnd";
-            this.mDTDateEnd.Size = new System.Drawing.Size(828, 29);
+            this.mDTDateEnd.Size = new System.Drawing.Size(829, 29);
             this.mDTDateEnd.TabIndex = 43;
             this.mDTDateEnd.Value = new System.DateTime(2016, 10, 13, 0, 0, 0, 0);
             // 
@@ -592,7 +592,7 @@
             this.panelChoixContrat.Controls.Add(this.mRadioButtonContratPro);
             this.panelChoixContrat.Location = new System.Drawing.Point(175, 125);
             this.panelChoixContrat.Name = "panelChoixContrat";
-            this.panelChoixContrat.Size = new System.Drawing.Size(826, 25);
+            this.panelChoixContrat.Size = new System.Drawing.Size(829, 25);
             this.panelChoixContrat.TabIndex = 51;
             // 
             // panelChoixDurée
@@ -602,7 +602,7 @@
             this.panelChoixDurée.Controls.Add(this.mRadioButton2ans);
             this.panelChoixDurée.Location = new System.Drawing.Point(175, 470);
             this.panelChoixDurée.Name = "panelChoixDurée";
-            this.panelChoixDurée.Size = new System.Drawing.Size(826, 25);
+            this.panelChoixDurée.Size = new System.Drawing.Size(829, 25);
             this.panelChoixDurée.TabIndex = 52;
             // 
             // mTxBCommentaire
@@ -661,7 +661,7 @@
             this.panelChoixNote.Controls.Add(this.mRadioButtonNote2);
             this.panelChoixNote.Location = new System.Drawing.Point(175, 598);
             this.panelChoixNote.Name = "panelChoixNote";
-            this.panelChoixNote.Size = new System.Drawing.Size(826, 25);
+            this.panelChoixNote.Size = new System.Drawing.Size(829, 25);
             this.panelChoixNote.TabIndex = 53;
             // 
             // mLabelNote
