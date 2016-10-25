@@ -156,7 +156,7 @@ namespace gestionstage.Forms
             mCbxStagiaireClassroom.DataSource = lesFormations;
 
             // La présélection depuis leContrat
-            mTxBEntrepriseName.Text = leContrat.S_nom;
+            mTxBStagiaireName.Text = leContrat.S_nom;
             mTxBStagiaireFirstName.Text = leContrat.S_prenom;
             mTxBTuteurName.Text = leContrat.T_nom;
             mTxBTuteurFirstName.Text = leContrat.T_prenom;

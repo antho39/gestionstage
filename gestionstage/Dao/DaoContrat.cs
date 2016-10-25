@@ -91,7 +91,7 @@ namespace gestionstage.Dao
                 open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "SELECT * FROM entreprises WHERE id=" + id;
+                cmd.CommandText = "SELECT * FROM contrats WHERE id=" + id;
 
                 MySqlDataReader res = cmd.ExecuteReader();
 
