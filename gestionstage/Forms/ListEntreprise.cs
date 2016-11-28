@@ -20,7 +20,6 @@ namespace gestionstage.Forms
 {
     public partial class ListEntreprise : MetroFramework.Forms.MetroForm
     {
-        private BindingSource bindingSListEntreprise = new BindingSource();
         DataTable dtListeEntreprise = DaoEntreprise.dtReadAll();
 
         public ListEntreprise()
@@ -33,6 +32,7 @@ namespace gestionstage.Forms
 
         private void ListEntreprise_Load(object sender, EventArgs e)
         {
+            refreshDTListeEntreprise();
             refreshGrid(dtListeEntreprise);      //Affichage des entreprises dans le tableau
             refreshColor();                     //Affichage des tuiles de couleurs, pour la selection du thème
         }
@@ -84,6 +84,7 @@ namespace gestionstage.Forms
                     if (result == DialogResult.Yes)
                     {
                         DaoEntreprise.delete(mGridEntreprises.Rows[e.RowIndex].Cells[0].Value.ToString());
+                        refreshDTListeEntreprise();
                         refreshGrid(dtListeEntreprise);
                     }
                     else if (result == DialogResult.No)
@@ -153,6 +154,11 @@ namespace gestionstage.Forms
                 _tile.Click += _tile_Click;
                 ConteneurCouleurs.Controls.Add(_tile);
             }
+        }
+
+        private void refreshDTListeEntreprise()
+        {
+            dtListeEntreprise = DaoEntreprise.dtReadAll();
         }
     }
 }

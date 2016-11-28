@@ -37,7 +37,6 @@ namespace gestionstage.Forms
         // --------------------------------------------------------------------
         private void mLinkBack_Click(object sender, EventArgs e)
         {
-            //TODO : Changer pour la page précédente (ViewEntreprise)
             ListEntreprise formBack = new ListEntreprise();
             formBack.Show();
             this.Close();
@@ -122,7 +121,25 @@ namespace gestionstage.Forms
                 ModifyContrat formModifyContrat = new ModifyContrat(DaoContrat.readOne(mGridContrat.Rows[e.RowIndex].Cells[0].Value.ToString()), lEntreprise);
                 formModifyContrat.Show();
                 this.Close();
-            }            
+            }
+            else if (e.ColumnIndex == mGridContrat.Columns["Supprimer"].Index && e.RowIndex >= 0)
+            {
+                DialogResult result = MetroMessageBox.Show(this, "Voulez vous vraiment supprimer le contrat ?", "Confirmer la suppréssion", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    DaoContrat.delete(mGridContrat.Rows[e.RowIndex].Cells[0].Value.ToString());
+                    refreshGrid();
+                }
+                else if (result == DialogResult.No)
+                {
+                    // Ne rien faire
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
         }
     }
 }

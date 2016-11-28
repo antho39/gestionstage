@@ -73,9 +73,9 @@ namespace gestionstage.Forms
 
             if (lsError.Count == 0)
             {
-                DaoEntreprise.update(new Entreprise(mTxBEntrepriseSiret.Text, mTxBEntrepriseName.Text, mTxBEntrepriseAdresse.Text, mTxBEntreprisePostalCode.Text, mTxBEntrepriseCity.Text, mTxBEntrepriseTelephone.Text, mTxBEntrepriseEmail.Text, mTxBCommentaire.Text, false));
-                ListEntreprise MainFormListEntreprise = new ListEntreprise();
-                MainFormListEntreprise.Show();
+                DaoEntreprise.update(new Entreprise(lEntreprise.Id, mTxBEntrepriseSiret.Text, mTxBEntrepriseName.Text, mTxBEntrepriseAdresse.Text, mTxBEntreprisePostalCode.Text, mTxBEntrepriseCity.Text, mTxBEntrepriseTelephone.Text, mTxBEntrepriseEmail.Text, mTxBCommentaire.Text, false), lEntreprise.Siret);
+                ViewEntreprise ViewEntreprise = new ViewEntreprise(mTxBEntrepriseSiret.Text);
+                ViewEntreprise.Show();
                 this.Close();
             }
             else

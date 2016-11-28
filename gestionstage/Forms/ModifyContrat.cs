@@ -39,7 +39,7 @@ namespace gestionstage.Forms
         // --------------------------------------------------------------------
         private void mLinkBack_Click(object sender, EventArgs e)
         {
-            ListEntreprise formBack = new ListEntreprise();
+            ViewEntreprise formBack = new ViewEntreprise(lEntreprise.Siret);
             formBack.Show();
             this.Close();
         }
@@ -78,42 +78,9 @@ namespace gestionstage.Forms
 
         private void mButtonModifyContrat_Click(object sender, EventArgs e)
         {
-            int typeContrat = 0;
-            int note = 0;
 
-            if (mRadioButtonApprentissage.Checked == true)
-            {
-                typeContrat = 1;
-            }
-            else if (mRadioButtonStage.Checked == true)
-            {
-                typeContrat = 2;
-            }
-            else if (mRadioButtonContratPro.Checked == true)
-            {
-                typeContrat = 3;
-            }
-
-            if (mRadioButtonNote0.Checked == true)
-            {
-                note = 0;
-            }
-            else if (mRadioButtonNote1.Checked == true)
-            {
-                note = 1;
-            }
-            else if (mRadioButtonNote2.Checked == true)
-            {
-                note = 2;
-            }
-            else if (mRadioButtonNote3.Checked == true)
-            {
-                note = 3;
-            }
-            else if (mRadioButtonNoteNonRenseigne.Checked == true)
-            {
-                note = 5; // TODO change la note non renseigné (null)
-            }
+            int typeContrat = idContrat();
+            int note = appreciation();
 
             CheckErrorSNom();
             CheckErrorSPrenom();
@@ -124,9 +91,9 @@ namespace gestionstage.Forms
 
             if (lsError.Count == 0)
             {
-                //TODO : DaoContrat.Update
+                DaoContrat.update(new Contrat(leContrat.Id, idContrat(), Convert.ToInt32(mCbxStagiaireClassroom.SelectedValue.ToString()), mTxBStagiaireName.Text, mTxBStagiaireFirstName.Text, mTxBTuteurName.Text, mTxBTuteurFirstName.Text, mTxBTuteurEmail.Text, mTxBTuteurTelephone.Text, mDTDateBegin.Value, mDTDateEnd.Value, mTxBCommentaire.Text, appreciation(), lEntreprise.Id));
 
-                ViewEntreprise FormViewEntreprise = new ViewEntreprise();
+                ViewEntreprise FormViewEntreprise = new ViewEntreprise(lEntreprise.Siret);
                 FormViewEntreprise.Show();
                 this.Close();
             }
@@ -169,7 +136,6 @@ namespace gestionstage.Forms
             int typeContrat = leContrat.Typecontrat_id;
             switch (typeContrat)
             {
-                // TODO To change avec les bonnes valeurs
                 case 1:
                     mRadioButtonApprentissage.Select();
                     mRadioButton2ans.Select();
@@ -191,7 +157,6 @@ namespace gestionstage.Forms
             int noteContrat = leContrat.Appreciation;
             switch (typeContrat)
             {
-                // TODO To change avec les bonnes valeurs
                 case 0:
                     mRadioButtonNote0.Select();
                     break;
@@ -295,6 +260,54 @@ namespace gestionstage.Forms
             else
             {
                 return false;
+            }
+        }
+
+        private int idContrat()
+        {
+            if (mRadioButtonApprentissage.Checked == true)
+            {
+                return 1;
+            }
+            else if (mRadioButtonStage.Checked == true)
+            {
+                return 2;
+            }
+            else if (mRadioButtonContratPro.Checked == true)
+            {
+                return 3;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
+        private int appreciation()
+        {
+            if (mRadioButtonNote0.Checked == true)
+            {
+                return 0;
+            }
+            else if (mRadioButtonNote1.Checked == true)
+            {
+                return 1;
+            }
+            else if (mRadioButtonNote2.Checked == true)
+            {
+                return 2;
+            }
+            else if (mRadioButtonNote3.Checked == true)
+            {
+                return 3;
+            }
+            else if (mRadioButtonNoteNonRenseigne.Checked == true)
+            {
+                return 5;
+            }
+            else
+            {
+                return 0;
             }
         }
     }

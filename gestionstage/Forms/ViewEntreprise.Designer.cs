@@ -71,8 +71,9 @@
             this.TypeContrat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateDebut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateFin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Appreciation = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Avis = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modifier = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Supprimer = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.mSMViewEntreprise)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mGridContrat)).BeginInit();
             this.SuspendLayout();
@@ -483,8 +484,9 @@
             this.TypeContrat,
             this.DateDebut,
             this.DateFin,
-            this.Appreciation,
-            this.Modifier});
+            this.Avis,
+            this.Modifier,
+            this.Supprimer});
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
@@ -516,6 +518,7 @@
             // Id
             // 
             this.Id.HeaderText = "id";
+            this.Id.MinimumWidth = 75;
             this.Id.Name = "Id";
             this.Id.ReadOnly = true;
             this.Id.Visible = false;
@@ -583,13 +586,15 @@
             this.DateFin.HeaderText = "Date de fin";
             this.DateFin.Name = "DateFin";
             // 
-            // Appreciation
+            // Avis
             // 
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            this.Appreciation.DefaultCellStyle = dataGridViewCellStyle10;
-            this.Appreciation.HeaderText = "Appréciation";
-            this.Appreciation.Name = "Appreciation";
-            this.Appreciation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Avis.DefaultCellStyle = dataGridViewCellStyle10;
+            this.Avis.HeaderText = "Avis";
+            this.Avis.MinimumWidth = 50;
+            this.Avis.Name = "Avis";
+            this.Avis.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Avis.Width = 50;
             // 
             // Modifier
             // 
@@ -600,6 +605,16 @@
             this.Modifier.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Modifier.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Modifier.Width = 55;
+            // 
+            // Supprimer
+            // 
+            this.Supprimer.HeaderText = "Supprimer";
+            this.Supprimer.Image = global::gestionstage.Properties.Resources.tab_supprimer;
+            this.Supprimer.MinimumWidth = 50;
+            this.Supprimer.Name = "Supprimer";
+            this.Supprimer.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Supprimer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Supprimer.Width = 60;
             // 
             // ViewEntreprise
             // 
@@ -667,7 +682,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TypeContrat;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateDebut;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateFin;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Appreciation;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Avis;
         private System.Windows.Forms.DataGridViewImageColumn Modifier;
+        private System.Windows.Forms.DataGridViewImageColumn Supprimer;
     }
 }

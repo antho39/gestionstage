@@ -108,5 +108,65 @@ namespace gestionstage.Dao
                 return leContrat;
             }
         }
+
+        public static Boolean update(Contrat unContrat)
+        {
+            try
+            {
+                open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "UPDATE contrats SET typecontrat_id=@typecontrat_id,formation_id=@formation_id,s_nom=@s_nom,s_prenom=@s_prenom,t_nom=@t_nom,t_prenom=@t_prenom,t_mail=@t_mail,t_telephone=@t_telephone,date_debut=@date_debut,date_fin=@date_fin,commentaire=@commentaire,bool_envoye=@bool_envoye,appreciation=@appreciation,entreprise_id=@entreprise_id WHERE id=" + unContrat.Id;
+
+                cmd.Prepare();
+
+                cmd.Parameters.AddWithValue("@typecontrat_id", unContrat.Typecontrat_id);
+                cmd.Parameters.AddWithValue("@formation_id", unContrat.Formation_id);
+                cmd.Parameters.AddWithValue("@s_nom", unContrat.S_nom);
+                cmd.Parameters.AddWithValue("@s_prenom", unContrat.S_prenom);
+                cmd.Parameters.AddWithValue("@t_nom", unContrat.T_nom);
+                cmd.Parameters.AddWithValue("@t_prenom", unContrat.T_prenom);
+                cmd.Parameters.AddWithValue("@t_mail", unContrat.T_mail);
+                cmd.Parameters.AddWithValue("@t_telephone", unContrat.T_telephone);
+                cmd.Parameters.AddWithValue("@date_debut", unContrat.Date_debut);
+                cmd.Parameters.AddWithValue("@date_fin", unContrat.Date_fin);
+                cmd.Parameters.AddWithValue("@commentaire", unContrat.Commentaire);
+                cmd.Parameters.AddWithValue("@bool_envoye", unContrat.Bool_envoye);
+                cmd.Parameters.AddWithValue("@appreciation", unContrat.Appreciation);
+                cmd.Parameters.AddWithValue("@entreprise_id", unContrat.Entreprise_id);
+
+                cmd.ExecuteNonQuery();
+
+                close();
+
+                return true;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+                return false;
+            }
+        }
+
+        public static void delete(string unId)
+        {
+            try
+            {
+                open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "DELETE FROM contrats WHERE id=" + unId;
+
+                cmd.ExecuteNonQuery();
+
+                close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+            }
+        }
     }
 }
