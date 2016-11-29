@@ -500,6 +500,7 @@
             this.mGridContrat.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.mGridContrat.Location = new System.Drawing.Point(25, 403);
             this.mGridContrat.Name = "mGridContrat";
+            this.mGridContrat.ReadOnly = true;
             this.mGridContrat.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
@@ -530,6 +531,7 @@
             this.TuteurName.DefaultCellStyle = dataGridViewCellStyle2;
             this.TuteurName.HeaderText = "Nom Tuteur";
             this.TuteurName.Name = "TuteurName";
+            this.TuteurName.ReadOnly = true;
             // 
             // TuteurFirstName
             // 
@@ -538,6 +540,7 @@
             this.TuteurFirstName.DefaultCellStyle = dataGridViewCellStyle3;
             this.TuteurFirstName.HeaderText = "Prenom Tuteur";
             this.TuteurFirstName.Name = "TuteurFirstName";
+            this.TuteurFirstName.ReadOnly = true;
             // 
             // Classe
             // 
@@ -545,6 +548,7 @@
             this.Classe.DefaultCellStyle = dataGridViewCellStyle4;
             this.Classe.HeaderText = "Classe";
             this.Classe.Name = "Classe";
+            this.Classe.ReadOnly = true;
             this.Classe.Width = 75;
             // 
             // EleveNom
@@ -554,6 +558,7 @@
             this.EleveNom.DefaultCellStyle = dataGridViewCellStyle5;
             this.EleveNom.HeaderText = "Nom élève";
             this.EleveNom.Name = "EleveNom";
+            this.EleveNom.ReadOnly = true;
             // 
             // EleveFirstName
             // 
@@ -562,6 +567,7 @@
             this.EleveFirstName.DefaultCellStyle = dataGridViewCellStyle6;
             this.EleveFirstName.HeaderText = "Prénom élève";
             this.EleveFirstName.Name = "EleveFirstName";
+            this.EleveFirstName.ReadOnly = true;
             // 
             // TypeContrat
             // 
@@ -570,6 +576,7 @@
             this.TypeContrat.HeaderText = "Type de contrat";
             this.TypeContrat.MinimumWidth = 50;
             this.TypeContrat.Name = "TypeContrat";
+            this.TypeContrat.ReadOnly = true;
             // 
             // DateDebut
             // 
@@ -577,6 +584,7 @@
             this.DateDebut.DefaultCellStyle = dataGridViewCellStyle8;
             this.DateDebut.HeaderText = "Date de début";
             this.DateDebut.Name = "DateDebut";
+            this.DateDebut.ReadOnly = true;
             this.DateDebut.Width = 115;
             // 
             // DateFin
@@ -585,6 +593,7 @@
             this.DateFin.DefaultCellStyle = dataGridViewCellStyle9;
             this.DateFin.HeaderText = "Date de fin";
             this.DateFin.Name = "DateFin";
+            this.DateFin.ReadOnly = true;
             // 
             // Avis
             // 
@@ -593,6 +602,7 @@
             this.Avis.HeaderText = "Avis";
             this.Avis.MinimumWidth = 50;
             this.Avis.Name = "Avis";
+            this.Avis.ReadOnly = true;
             this.Avis.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             this.Avis.Width = 50;
             // 
@@ -602,6 +612,7 @@
             this.Modifier.Image = global::gestionstage.Properties.Resources.tab_modifier;
             this.Modifier.MinimumWidth = 50;
             this.Modifier.Name = "Modifier";
+            this.Modifier.ReadOnly = true;
             this.Modifier.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Modifier.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Modifier.Width = 55;
@@ -612,6 +623,7 @@
             this.Supprimer.Image = global::gestionstage.Properties.Resources.tab_supprimer;
             this.Supprimer.MinimumWidth = 50;
             this.Supprimer.Name = "Supprimer";
+            this.Supprimer.ReadOnly = true;
             this.Supprimer.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.Supprimer.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Supprimer.Width = 60;

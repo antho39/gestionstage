@@ -106,6 +106,32 @@ namespace gestionstage.Dao
             return dtEntreprise;
         }
 
+        public static DataTable dtReadAllByBoolEnvoye()
+        {
+            DataTable dtEntreprise = new DataTable();
+
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM entreprises WHERE bool_envoye=0";
+
+                MySqlDataReader res = cmd.ExecuteReader();
+
+                dtEntreprise.Load(res);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+                return dtEntreprise;
+            }
+
+            return dtEntreprise;
+        }
+
         public static Boolean update(Entreprise uneEntreprise, string ancienSiret = null)
         {
             if (ancienSiret == null)

@@ -37,7 +37,7 @@ namespace gestionstage.Forms
         // --------------------------------------------------------------------
         private void mLinkBack_Click(object sender, EventArgs e)
         {
-            ListEntreprise formBack = new ListEntreprise();
+            ViewEntreprise formBack = new ViewEntreprise(lEntreprise.Siret);
             formBack.Show();
             this.Close();
         }
@@ -76,7 +76,7 @@ namespace gestionstage.Forms
 
             if (lsError.Count == 0)
             {
-                DaoContrat.create(new Contrat(typeContrat, Convert.ToInt16(mCbxStagiaireClassroom.SelectedValue.ToString()), mTxBStagiaireName.Text, mTxBStagiaireFirstName.Text, mTxBTuteurName.Text, mTxBTuteurFirstName.Text, mTxBTuteurEmail.Text, mTxBTuteurTelephone.Text, mDTDateBegin.Value, mDTDateEnd.Value, mTxBCommentaire.Text, note, lEntreprise.Id));
+                DaoContrat.create(new Contrat(typeContrat, Convert.ToInt16(mCbxStagiaireClassroom.SelectedValue.ToString()), mTxBStagiaireName.Text, mTxBStagiaireFirstName.Text, mTxBTuteurName.Text, mTxBTuteurFirstName.Text, mTxBTuteurEmail.Text, mTxBTuteurTelephone.Text, mDTDateBegin.Value, mDTDateEnd.Value, mTxBCommentaire.Text, false, note, lEntreprise.Id));
 
                 ViewEntreprise FormViewEntreprise = new ViewEntreprise();
                 FormViewEntreprise.Show();

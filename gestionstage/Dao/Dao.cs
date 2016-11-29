@@ -15,9 +15,12 @@ namespace gestionstage.Dao
         protected static MySqlConnection conn = null;
         
         //Méthodes
-        protected static void open()
+        protected static void open(Boolean synchro = false)
         {
             string cs = @"server=localhost;userid=root;password=;database=gestionstage";
+            if (synchro == true)
+            {   cs = @"server=localhost;userid=root;password=;database=arcwebservice";   }
+
             try
             {
                 conn = new MySqlConnection(cs);

@@ -91,7 +91,7 @@ namespace gestionstage.Forms
 
             if (lsError.Count == 0)
             {
-                DaoContrat.update(new Contrat(leContrat.Id, idContrat(), Convert.ToInt32(mCbxStagiaireClassroom.SelectedValue.ToString()), mTxBStagiaireName.Text, mTxBStagiaireFirstName.Text, mTxBTuteurName.Text, mTxBTuteurFirstName.Text, mTxBTuteurEmail.Text, mTxBTuteurTelephone.Text, mDTDateBegin.Value, mDTDateEnd.Value, mTxBCommentaire.Text, appreciation(), lEntreprise.Id));
+                DaoContrat.update(new Contrat(leContrat.Id, idContrat(), Convert.ToInt32(mCbxStagiaireClassroom.SelectedValue.ToString()), mTxBStagiaireName.Text, mTxBStagiaireFirstName.Text, mTxBTuteurName.Text, mTxBTuteurFirstName.Text, mTxBTuteurEmail.Text, mTxBTuteurTelephone.Text, mDTDateBegin.Value, mDTDateEnd.Value, mTxBCommentaire.Text, false, appreciation(), lEntreprise.Id));
 
                 ViewEntreprise FormViewEntreprise = new ViewEntreprise(lEntreprise.Siret);
                 FormViewEntreprise.Show();

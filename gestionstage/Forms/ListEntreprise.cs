@@ -52,6 +52,16 @@ namespace gestionstage.Forms
             StyleManager.Style = (MetroColorStyle)((MetroTile)sender).Tag;
         }
 
+        private void mButtonConfirmPush_Click(object sender, EventArgs e)
+        {
+            DaoSynchronisation.SynchronisationPush();
+        }
+
+        private void mButtonConfirmPull_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void mButtonConfirmColor_Click(object sender, EventArgs e)
         {
             Settings.Default.Style = StyleManager.Style;

@@ -116,7 +116,7 @@ namespace gestionstage.Classes
         /// <summary>
         /// Création d'un contrat avant chargement BDD (sans l'ID)
         /// </summary>
-        public Contrat(int unIdTypeContrat, int unIdFormation, string unNomStagiaire, string unPrenomStagiaire, string unNomTuteur, string unPrenomTuteur, string unEmailTuteur, string unTelephoneTuteur, DateTime uneDateDebut, DateTime uneDateFin, string unCommentaire, int uneAppreciation, int unIdEntreprise)
+        public Contrat(int unIdTypeContrat, int unIdFormation, string unNomStagiaire, string unPrenomStagiaire, string unNomTuteur, string unPrenomTuteur, string unEmailTuteur, string unTelephoneTuteur, DateTime uneDateDebut, DateTime uneDateFin, string unCommentaire, Boolean unBool_envoye, int uneAppreciation, int unIdEntreprise)
         {
             this.id = 0;
             this.typecontrat_id = unIdTypeContrat;
@@ -130,7 +130,7 @@ namespace gestionstage.Classes
             this.date_debut = uneDateDebut;
             this.date_fin = uneDateFin;
             this.commentaire = unCommentaire;
-            this.bool_envoye = false;
+            this.bool_envoye = unBool_envoye;
             this.appreciation = uneAppreciation;
             this.entreprise_id = unIdEntreprise;
         }
@@ -138,7 +138,7 @@ namespace gestionstage.Classes
         /// <summary>
         /// Création d'un contrat objet chargement depuis BDD
         /// </summary>
-        public Contrat(int unId, int unIdTypeContrat, int unIdFormation, string unNomStagiaire, string unPrenomStagiaire, string unNomTuteur, string unPrenomTuteur, string unEmailTuteur, string unTelephoneTuteur, DateTime uneDateDebut, DateTime uneDateFin, string unCommentaire, int uneAppreciation, int unIdEntreprise)
+        public Contrat(int unId, int unIdTypeContrat, int unIdFormation, string unNomStagiaire, string unPrenomStagiaire, string unNomTuteur, string unPrenomTuteur, string unEmailTuteur, string unTelephoneTuteur, DateTime uneDateDebut, DateTime uneDateFin, string unCommentaire, Boolean unBool_envoye, int uneAppreciation, int unIdEntreprise)
         {
             this.id = unId;
             this.typecontrat_id = unIdTypeContrat;
@@ -152,7 +152,7 @@ namespace gestionstage.Classes
             this.date_debut = uneDateDebut;
             this.date_fin = uneDateFin;
             this.commentaire = unCommentaire;
-            this.bool_envoye = false;
+            this.bool_envoye = unBool_envoye;
             this.appreciation = uneAppreciation;
             this.entreprise_id = unIdEntreprise;
         }

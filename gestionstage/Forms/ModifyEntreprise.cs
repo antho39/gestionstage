@@ -56,7 +56,7 @@ namespace gestionstage.Forms
         // --------------------------------------------------------------------
         private void mLinkBack_Click(object sender, EventArgs e)
         {
-            ListEntreprise formBack = new ListEntreprise();
+            ViewEntreprise formBack = new ViewEntreprise(lEntreprise.Siret);
             formBack.Show();
             this.Close();
         }

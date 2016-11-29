@@ -84,6 +84,7 @@
     <Compile Include="Dao\DaoContrat.cs" />
     <Compile Include="Dao\DaoEntreprise.cs" />
     <Compile Include="Dao\DaoFormation.cs" />
+    <Compile Include="Dao\DaoSynchronisation.cs" />
     <Compile Include="Forms\AddContrat.cs">
       <SubType>Form</SubType>
     </Compile>

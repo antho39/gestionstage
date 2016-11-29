@@ -15,32 +15,6 @@ namespace gestionstage.Dao
 {
     class DaoContrat : Dao
     {
-        public static DataTable dtReadById(int unId)
-        {
-            DataTable dtContrat = new DataTable();
-
-            try
-            {
-                open();
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = conn;
-                cmd.CommandText = "SELECT contrats.id, typecontrats.nom AS typecontrat_nom, formations.nom AS c_nom, s_nom, s_prenom, t_nom, t_prenom, t_mail, t_telephone, date_debut, date_fin, contrats.commentaire, contrats.bool_envoye, appreciation, entreprises.nom, entreprise_id FROM contrats INNER JOIN formations ON contrats.formation_id = formations.id INNER JOIN typecontrats ON contrats.typecontrat_id = typecontrats.id INNER JOIN entreprises ON contrats.entreprise_id = entreprises.id WHERE entreprise_id =" + unId;
-
-                MySqlDataReader res = cmd.ExecuteReader();
-
-                dtContrat.Load(res);
-
-            }
-            catch (MySqlException ex)
-            {
-                Console.WriteLine("Error: {0}", ex.ToString());
-
-                return dtContrat;
-            }
-
-            return dtContrat;
-        }
-
         public static void create(Contrat unContrat)
         {
             try
@@ -96,7 +70,7 @@ namespace gestionstage.Dao
                 MySqlDataReader res = cmd.ExecuteReader();
 
                 res.Read();
-                leContrat = new Contrat(Convert.ToInt16(res["id"]), Convert.ToInt16(res["typecontrat_id"]), Convert.ToInt16(res["formation_id"]), (string)res["s_nom"], (string)res["s_prenom"], (string)res["t_nom"], (string)res["t_prenom"], (string)res["t_mail"], (string)res["t_telephone"], (DateTime)res["date_debut"], (DateTime)res["date_fin"], (string)res["commentaire"], Convert.ToInt16(res["appreciation"]), Convert.ToInt16(res["entreprise_id"]));
+                leContrat = new Contrat(Convert.ToInt16(res["id"]), Convert.ToInt16(res["typecontrat_id"]), Convert.ToInt16(res["formation_id"]), (string)res["s_nom"], (string)res["s_prenom"], (string)res["t_nom"], (string)res["t_prenom"], (string)res["t_mail"], (string)res["t_telephone"], (DateTime)res["date_debut"], (DateTime)res["date_fin"], (string)res["commentaire"], Convert.ToBoolean(res["bool_envoye"]), Convert.ToInt16(res["appreciation"]), Convert.ToInt16(res["entreprise_id"]));
                 close();
 
                 return leContrat;
@@ -107,6 +81,58 @@ namespace gestionstage.Dao
 
                 return leContrat;
             }
+        }
+
+        public static DataTable dtReadById(int unId)
+        {
+            DataTable dtContrat = new DataTable();
+
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT contrats.id, typecontrats.nom AS typecontrat_nom, formations.nom AS c_nom, s_nom, s_prenom, t_nom, t_prenom, t_mail, t_telephone, date_debut, date_fin, contrats.commentaire, contrats.bool_envoye, appreciation, entreprises.nom, entreprise_id FROM contrats INNER JOIN formations ON contrats.formation_id = formations.id INNER JOIN typecontrats ON contrats.typecontrat_id = typecontrats.id INNER JOIN entreprises ON contrats.entreprise_id = entreprises.id WHERE entreprise_id =" + unId;
+
+                MySqlDataReader res = cmd.ExecuteReader();
+
+                dtContrat.Load(res);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+                return dtContrat;
+            }
+
+            return dtContrat;
+        }
+
+        public static DataTable dtReadAllByBoolEnvoye()
+        {
+            DataTable dtContrat = new DataTable();
+
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM contrats WHERE bool_envoye=0";
+
+                MySqlDataReader res = cmd.ExecuteReader();
+
+                dtContrat.Load(res);
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+                return dtContrat;
+            }
+
+            return dtContrat;
         }
 
         public static Boolean update(Contrat unContrat)
