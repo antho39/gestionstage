@@ -78,7 +78,7 @@ namespace gestionstage.Forms
             {
                 DaoContrat.create(new Contrat(typeContrat, Convert.ToInt16(mCbxStagiaireClassroom.SelectedValue.ToString()), mTxBStagiaireName.Text, mTxBStagiaireFirstName.Text, mTxBTuteurName.Text, mTxBTuteurFirstName.Text, mTxBTuteurEmail.Text, mTxBTuteurTelephone.Text, mDTDateBegin.Value, mDTDateEnd.Value, mTxBCommentaire.Text, false, note, lEntreprise.Id));
 
-                ViewEntreprise FormViewEntreprise = new ViewEntreprise();
+                ViewEntreprise FormViewEntreprise = new ViewEntreprise(lEntreprise.Siret);
                 FormViewEntreprise.Show();
                 this.Close();
             }

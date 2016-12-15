@@ -96,3 +96,5 @@ Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bi
 Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\MetroFramework.Fonts.dll
 Y:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\MySql.Data.dll
 D:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\obj\Debug\gestionstage.Forms.ModifyContrat.resources
+D:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\Newtonsoft.Json.dll
+D:\Ikikay\Documents\Visual Studio 2015\Projects\GIT\gestionstage\gestionstage\bin\Debug\Newtonsoft.Json.xml

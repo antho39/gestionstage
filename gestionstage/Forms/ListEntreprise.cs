@@ -15,6 +15,8 @@ using MetroFramework.Controls;
 using MetroFramework.Forms;
 using gestionstage.Classes;
 using gestionstage.Dao;
+using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace gestionstage.Forms
 {
@@ -55,11 +57,107 @@ namespace gestionstage.Forms
         private void mButtonConfirmPush_Click(object sender, EventArgs e)
         {
             DaoSynchronisation.SynchronisationPush();
+            DialogResult result = MetroMessageBox.Show(this, "Les modifications ont été envoyé à la base du WebService", "Confirmation d'envoie", MessageBoxButtons.OK);
         }
 
         private void mButtonConfirmPull_Click(object sender, EventArgs e)
         {
+            try
+            {
+                String url = "http://arcwebservice.aeg2.fr/"; //TODO Changer par le JSON des temps pleins
+                var res = new WebClient();
+                var json = res.DownloadString(url);
+                JArray listEntreprisesContrats = JArray.Parse(json);
+                foreach (var entreprise in listEntreprisesContrats)
+                {
+                    if (!(DaoEntreprise.isExistSiret(entreprise["siret"].ToString()))) // Si l'entreprise (siret) n'éxiste pas BDD C#
+                    {
+                        Entreprise nouvelleEntreprise = new Entreprise(
+                            entreprise["siret"].ToString(),
+                            entreprise["nom"].ToString(),
+                            entreprise["adresse"].ToString(),
+                            entreprise["cp"].ToString(),
+                            entreprise["ville"].ToString(),
+                            entreprise["telephone"].ToString(),
+                            entreprise["email"].ToString(),
+                            entreprise["commentaireEntreprise"].ToString(),
+                            true); // Bool Envoyé à true, pas besoin de leur renvoyé leurs modifications
 
+                        DaoEntreprise.create(nouvelleEntreprise);
+                    }
+                    else
+                    {
+                        //L'entreprise éxist déjà - Afficher une erreur si besoin ici.
+                    }
+                    foreach (var contrat in entreprise["contrats"])
+                    {
+                        Entreprise entrepriseDuContrat = DaoEntreprise.readOneBySiret(entreprise["siret"].ToString());
+
+                        //Traduction des Cléfs étrangère
+                        //Type Contrat
+                        int typeContrat;
+                        switch (contrat["typecontrat"].ToString())
+                        {
+                            case "apprentissage":
+                                typeContrat = 1;
+                                break;
+                            case "Stage":
+                                typeContrat = 2;
+                                break;
+                            case "Contrat Pro":
+                                typeContrat = 3;
+                                break;
+
+                            default:
+                                typeContrat = 0;
+                                break;
+                        }
+
+                        //ID Formation
+                        int idFormation;
+                        switch (contrat["nom_formation"].ToString())
+                        {
+                            case "BTS SIO":
+                                idFormation = 1;
+                                break;
+
+                            default:
+                                idFormation = 0;
+                                break;
+                        }
+
+                        //Traduction en DateTime
+                        DateTime dateDebut = jsonToDateTime(contrat["date_debut"].ToString());
+                        DateTime dateFin = jsonToDateTime(contrat["date_fin"].ToString());
+
+                        Contrat nouveauContrat = new Contrat(
+                            typeContrat,
+                            idFormation,
+                            contrat["nom_eleve"].ToString(),
+                            contrat["prenom_eleve"].ToString(),
+                            contrat["nom_tuteur"].ToString(),
+                            contrat["prenom_tuteur"].ToString(),
+                            contrat["mail_tuteur"].ToString(),
+                            contrat["telephone_tuteur"].ToString(),
+                            dateDebut,
+                            dateFin,
+                            contrat["commentaireContrat"].ToString(),
+                            true,
+                            Convert.ToInt32(contrat["appreciation"].ToString()),
+                            entrepriseDuContrat.Id);
+
+                        DaoContrat.create(nouveauContrat);
+
+                    }
+                }
+
+                MessageBox.Show("Ok");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void mButtonConfirmColor_Click(object sender, EventArgs e)
@@ -169,6 +267,30 @@ namespace gestionstage.Forms
         private void refreshDTListeEntreprise()
         {
             dtListeEntreprise = DaoEntreprise.dtReadAll();
+        }
+
+        // --------------------------------------------------------------------
+        // Fonctions utile
+        // --------------------------------------------------------------------
+        private DateTime jsonToDateTime(string JsonDate)
+        {
+            string anneeString = JsonDate[6].ToString() + JsonDate[7].ToString() + JsonDate[8].ToString() + JsonDate[9].ToString();
+            string moisString = JsonDate[3].ToString() + JsonDate[4].ToString();
+            string jourString = JsonDate[0].ToString() + JsonDate[1].ToString();
+            string heureString = JsonDate[11].ToString() + JsonDate[12].ToString();
+            string minuteString = JsonDate[14].ToString() + JsonDate[15].ToString();
+            string secondeString = JsonDate[17].ToString() + JsonDate[18].ToString();
+
+            int annee = Convert.ToInt32(anneeString);
+            int mois = Convert.ToInt32(moisString);
+            int jour = Convert.ToInt32(jourString);
+            int heure = Convert.ToInt32(heureString);
+            int minute = Convert.ToInt32(minuteString);
+            int seconde = Convert.ToInt32(secondeString);
+
+            DateTime laDateTime = new DateTime(annee, mois, jour, heure, minute, seconde);
+
+            return laDateTime;
         }
     }
 }

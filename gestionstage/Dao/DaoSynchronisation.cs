@@ -15,7 +15,7 @@ namespace gestionstage.Dao
 {
     class DaoSynchronisation : Dao
     {
-        public static void createEntreprise(Entreprise uneEntreprise)
+        public static Boolean createEntreprise(Entreprise uneEntreprise)
         {
             try
             {
@@ -44,11 +44,13 @@ namespace gestionstage.Dao
                 uneEntreprise.Id = (int)cmd.LastInsertedId;
 
                 close();
+
+                return true;
             }
             catch (MySqlException ex)
             {
                 Console.WriteLine("Error: {0}", ex.ToString());
-
+                return false;
             }
         }
 
@@ -100,7 +102,7 @@ namespace gestionstage.Dao
 
             try
             {
-                open();
+                open(true);
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
                 cmd.CommandText = "SELECT * FROM entreprises WHERE siret=" + nSiret;
@@ -136,6 +138,8 @@ namespace gestionstage.Dao
 
                 dtEntrepriseWS.Load(res);
 
+                close();
+
             }
             catch (MySqlException ex)
             {
@@ -162,6 +166,7 @@ namespace gestionstage.Dao
 
                 dtContratWS.Load(res);
 
+                close();
             }
             catch (MySqlException ex)
             {
@@ -175,37 +180,137 @@ namespace gestionstage.Dao
 
         public static void SynchronisationPush()
         {
-            DataTable dtEntreprise = DaoEntreprise.dtReadAllByBoolEnvoye();
-            DataTable dtEntrepriseWS = DaoSynchronisation.dtReadAllEntreprises();
+            Boolean idCourantStable ;
 
-            DataTable dtContrat = DaoContrat.dtReadAllByBoolEnvoye();
-            DataTable dtContratWS = DaoSynchronisation.dtReadAllEntreprises();
+            DataTable dtEntreprisesContrats = DaoEntreprise.dtReadAllJoin();
 
-            foreach (DataRow entreprise in dtEntreprise.Rows)
+            //Vide la table du Web Service, avant intégration des nouvelles données.
+            truncateContrat();
+            truncateEntreprise();
+
+            int i = 0;
+            while (i < dtEntreprisesContrats.Rows.Count)
             {
-                if (existSiret(entreprise["siret"].ToString()))
-                {
-                    // Erreur, entreprise déjà présente, TODO message erreur
-                }
-                else
-                {
-                    //Création de l'objet Entreprise, avec Bool_envoyé en True
-                    Entreprise lEntreprise = new Entreprise(entreprise["siret"].ToString(), entreprise["nom"].ToString(), entreprise["adresse"].ToString(), entreprise["cp"].ToString(), entreprise["ville"].ToString(), entreprise["telephone"].ToString(), entreprise["email"].ToString(), entreprise["commentaire"].ToString(), true);
-                    //Envois au Web Service, l'entreprise avec le Bool_Envoyé en True
-                    DaoSynchronisation.createEntreprise(lEntreprise);
-                    //Modifie l'entreprise sur la BDD C#, avec le Bool_Envoyé en True
-                    DaoEntreprise.update(lEntreprise);
+                int idActuel = Convert.ToInt16(dtEntreprisesContrats.Rows[i]["idEntreprises"].ToString());
 
-                    foreach (DataRow contrat in dtContrat.Rows)
+                //Création de l'objet Entreprise, avec Bool_envoyé en True
+                Entreprise lEntreprise = new Entreprise(
+                    dtEntreprisesContrats.Rows[i]["siret"].ToString(),
+                    dtEntreprisesContrats.Rows[i]["nom"].ToString(),
+                    dtEntreprisesContrats.Rows[i]["adresse"].ToString(),
+                    dtEntreprisesContrats.Rows[i]["cp"].ToString(),
+                    dtEntreprisesContrats.Rows[i]["ville"].ToString(),
+                    dtEntreprisesContrats.Rows[i]["telephone"].ToString(),
+                    dtEntreprisesContrats.Rows[i]["email"].ToString(),
+                    dtEntreprisesContrats.Rows[i]["commentaire"].ToString(), 
+                    true);
+                //Envois au Web Service, l'entreprise avec le Bool_Envoyé en True
+                DaoSynchronisation.createEntreprise(lEntreprise);
+                //Modifie l'entreprise sur la BDD C#, avec le Bool_Envoyé en True
+                DaoEntreprise.update(lEntreprise);
+                idCourantStable = true;
+                while ((idCourantStable) && (i < dtEntreprisesContrats.Rows.Count ))
+                {
+                    //Création de l'objet Entrepriselocal (avec l'ID de la BDD C#)
+                    Entreprise EntrepriseLocal = DaoEntreprise.readOneBySiret(lEntreprise.Siret);
+                    //Création de l'objet EntrepriseWs (avec l'ID de la BDD WebService)
+                    Entreprise EntrepriseWs = DaoSynchronisation.readEtrepriseeBySiret(lEntreprise.Siret);
+                    //Création du contrat sur le WebService, avec Bool_Envoyé à True
+                    DaoSynchronisation.createContrat(new Contrat(
+                        Convert.ToInt16(dtEntreprisesContrats.Rows[i]["typecontrat_id"].ToString()), 
+                        Convert.ToInt16(dtEntreprisesContrats.Rows[i]["formation_id"].ToString()),
+                        dtEntreprisesContrats.Rows[i]["s_nom"].ToString(),
+                        dtEntreprisesContrats.Rows[i]["s_prenom"].ToString(),
+                        dtEntreprisesContrats.Rows[i]["t_nom"].ToString(),
+                        dtEntreprisesContrats.Rows[i]["t_prenom"].ToString(),
+                        dtEntreprisesContrats.Rows[i]["t_mail"].ToString(),
+                        dtEntreprisesContrats.Rows[i]["t_telephone"].ToString(), 
+                        Convert.ToDateTime(dtEntreprisesContrats.Rows[i]["date_debut"].ToString()), 
+                        Convert.ToDateTime(dtEntreprisesContrats.Rows[i]["date_fin"].ToString()),
+                        dtEntreprisesContrats.Rows[i]["commentaire"].ToString(), 
+                        true, 
+                        Convert.ToInt16(dtEntreprisesContrats.Rows[i]["appreciation"].ToString()), 
+                        EntrepriseWs.Id));
+
+                    //Mise à jours du contrat de la BDD C#, pour Booléan à true
+                    DaoContrat.update(new Contrat(
+                        Convert.ToInt16(dtEntreprisesContrats.Rows[i]["idContrats"].ToString()), 
+                        Convert.ToInt16(dtEntreprisesContrats.Rows[i]["typecontrat_id"].ToString()), 
+                        Convert.ToInt16(dtEntreprisesContrats.Rows[i]["formation_id"].ToString()),
+                        dtEntreprisesContrats.Rows[i]["s_nom"].ToString(),
+                        dtEntreprisesContrats.Rows[i]["s_prenom"].ToString(),
+                        dtEntreprisesContrats.Rows[i]["t_nom"].ToString(),
+                        dtEntreprisesContrats.Rows[i]["t_prenom"].ToString(),
+                        dtEntreprisesContrats.Rows[i]["t_mail"].ToString(),
+                        dtEntreprisesContrats.Rows[i]["t_telephone"].ToString(), 
+                        Convert.ToDateTime(dtEntreprisesContrats.Rows[i]["date_debut"].ToString()),
+                        Convert.ToDateTime(dtEntreprisesContrats.Rows[i]["date_fin"].ToString()),
+                        dtEntreprisesContrats.Rows[i]["commentaire"].ToString(), 
+                        true, 
+                        Convert.ToInt16(dtEntreprisesContrats.Rows[i]["appreciation"].ToString()), 
+                        EntrepriseLocal.Id));
+                    i++;
+                    if (i < dtEntreprisesContrats.Rows.Count)
                     {
-                        //Envois au Web Service, le Contrat avec le bon Id_Entreprise et le Bool_Envoye à true
-                        Entreprise EntrepriseLocal = DaoEntreprise.readOneBySiret(lEntreprise.Siret);
-                        DaoSynchronisation.createContrat(new Contrat(Convert.ToInt16(contrat["typecontrat_id"].ToString()), Convert.ToInt16(contrat["formation_id"].ToString()), contrat["s_nom"].ToString(), contrat["s_prenom"].ToString(), contrat["t_nom"].ToString(), contrat["t_prenom"].ToString(), contrat["t_mail"].ToString(), contrat["t_telephone"].ToString(), Convert.ToDateTime(contrat["date_debut"].ToString()), Convert.ToDateTime(contrat["date_fin"].ToString()), contrat["commentaire"].ToString(), true, Convert.ToInt16(contrat["appreciation"].ToString()), EntrepriseLocal.Id));
-                        //Modifie le Contrat sur la BDD C#, avec le bon Id_Entreprise et le Bool_Envoye à true
-                        Entreprise EntrepriseWs = DaoSynchronisation.readEtrepriseeBySiret(lEntreprise.Siret);
-                        DaoContrat.update(new Contrat(Convert.ToInt16(contrat["typecontrat_id"].ToString()), Convert.ToInt16(contrat["formation_id"].ToString()), contrat["s_nom"].ToString(), contrat["s_prenom"].ToString(), contrat["t_nom"].ToString(), contrat["t_prenom"].ToString(), contrat["t_mail"].ToString(), contrat["t_telephone"].ToString(), Convert.ToDateTime(contrat["date_debut"].ToString()), Convert.ToDateTime(contrat["date_fin"].ToString()), contrat["commentaire"].ToString(), true, Convert.ToInt16(contrat["appreciation"].ToString()), EntrepriseWs.Id));
+                        if (Convert.ToInt16(dtEntreprisesContrats.Rows[i]["idEntreprises"].ToString()) != idActuel)
+                        { idCourantStable = false; }
                     }
+                    else
+                    {
+                        idCourantStable = false;
+                    }
+                 
                 }
+            }
+        }
+
+        public static Boolean truncateEntreprise()
+        {
+            try
+            {
+                open(true);
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "delete from entreprises";
+
+                MySqlDataReader res = cmd.ExecuteReader();
+
+                close();
+
+                //return res.Read();
+                return true;
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+                return false;
+            }
+        }
+
+        public static Boolean truncateContrat()
+        {
+            try
+            {
+                open(true);
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "delete from contrats";
+
+                MySqlDataReader res = cmd.ExecuteReader();
+
+                close();
+
+                //return res.Read();
+                return true;
+
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+                return false;
             }
         }
 
@@ -219,6 +324,8 @@ namespace gestionstage.Dao
                 cmd.CommandText = "SELECT * FROM entreprises WHERE siret=" + unSiret;
 
                 MySqlDataReader res = cmd.ExecuteReader();
+
+                close();
 
                 return res.Read();
 

@@ -71,6 +71,7 @@ namespace gestionstage.Dao
 
                 res.Read();
                 leContrat = new Contrat(Convert.ToInt16(res["id"]), Convert.ToInt16(res["typecontrat_id"]), Convert.ToInt16(res["formation_id"]), (string)res["s_nom"], (string)res["s_prenom"], (string)res["t_nom"], (string)res["t_prenom"], (string)res["t_mail"], (string)res["t_telephone"], (DateTime)res["date_debut"], (DateTime)res["date_fin"], (string)res["commentaire"], Convert.ToBoolean(res["bool_envoye"]), Convert.ToInt16(res["appreciation"]), Convert.ToInt16(res["entreprise_id"]));
+
                 close();
 
                 return leContrat;
@@ -98,6 +99,7 @@ namespace gestionstage.Dao
 
                 dtContrat.Load(res);
 
+                close();
             }
             catch (MySqlException ex)
             {
@@ -124,6 +126,7 @@ namespace gestionstage.Dao
 
                 dtContrat.Load(res);
 
+                close();
             }
             catch (MySqlException ex)
             {
@@ -143,24 +146,13 @@ namespace gestionstage.Dao
 
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conn;
-                cmd.CommandText = "UPDATE contrats SET typecontrat_id=@typecontrat_id,formation_id=@formation_id,s_nom=@s_nom,s_prenom=@s_prenom,t_nom=@t_nom,t_prenom=@t_prenom,t_mail=@t_mail,t_telephone=@t_telephone,date_debut=@date_debut,date_fin=@date_fin,commentaire=@commentaire,bool_envoye=@bool_envoye,appreciation=@appreciation,entreprise_id=@entreprise_id WHERE id=" + unContrat.Id;
+                cmd.CommandText = "UPDATE contrats SET bool_envoye=@bool_envoye WHERE id=" + unContrat.Id;
 
                 cmd.Prepare();
 
-                cmd.Parameters.AddWithValue("@typecontrat_id", unContrat.Typecontrat_id);
-                cmd.Parameters.AddWithValue("@formation_id", unContrat.Formation_id);
-                cmd.Parameters.AddWithValue("@s_nom", unContrat.S_nom);
-                cmd.Parameters.AddWithValue("@s_prenom", unContrat.S_prenom);
-                cmd.Parameters.AddWithValue("@t_nom", unContrat.T_nom);
-                cmd.Parameters.AddWithValue("@t_prenom", unContrat.T_prenom);
-                cmd.Parameters.AddWithValue("@t_mail", unContrat.T_mail);
-                cmd.Parameters.AddWithValue("@t_telephone", unContrat.T_telephone);
-                cmd.Parameters.AddWithValue("@date_debut", unContrat.Date_debut);
-                cmd.Parameters.AddWithValue("@date_fin", unContrat.Date_fin);
-                cmd.Parameters.AddWithValue("@commentaire", unContrat.Commentaire);
+
                 cmd.Parameters.AddWithValue("@bool_envoye", unContrat.Bool_envoye);
-                cmd.Parameters.AddWithValue("@appreciation", unContrat.Appreciation);
-                cmd.Parameters.AddWithValue("@entreprise_id", unContrat.Entreprise_id);
+
 
                 cmd.ExecuteNonQuery();
 

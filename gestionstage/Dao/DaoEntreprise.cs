@@ -95,6 +95,7 @@ namespace gestionstage.Dao
 
                 dtEntreprise.Load(res);
 
+                close();
             }
             catch (MySqlException ex)
             {
@@ -121,6 +122,49 @@ namespace gestionstage.Dao
 
                 dtEntreprise.Load(res);
 
+                close();
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+
+                return dtEntreprise;
+            }
+
+            return dtEntreprise;
+        }
+
+        public static DataTable dtReadAllJoin()
+        {
+            DataTable dtEntreprise = new DataTable();
+
+            try
+            {
+                open();
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT entreprises.id as idEntreprises, " + //Renome entreprises.id par idEntreprises
+                    "entreprises.siret, entreprises.nom, entreprises.adresse, " +
+                    "entreprises.cp, entreprises.ville, entreprises.telephone, " +
+                    "entreprises.email, entreprises.commentaire, " +
+                    "entreprises.bool_envoye as bool_envoyeEntreprises, " + //Renome entreprises.bool_envoye par bool_envoyeEntreprises
+                    "contrats.id as idContrats, contrats.typecontrat_id, " + //Renome contrats.id par idContrats
+                    "contrats.formation_id, contrats.s_nom, contrats.s_prenom, " +
+                    "contrats.t_nom, contrats.t_prenom, contrats.t_mail, " +
+                    "contrats.t_telephone, contrats.date_debut, contrats.date_fin, " +
+                    "contrats.commentaire, contrats.bool_envoye as bool_envoyeContrats, " + //Renome contrats.bool_envoye par bool_envoyeContrats
+                    "contrats.appreciation, contrats.entreprise_id " +
+
+                    "FROM entreprises " +
+                    "INNER JOIN contrats " +
+                    "ON contrats.entreprise_id = entreprises.id " +
+                    "ORDER BY idEntreprises";
+
+                MySqlDataReader res = cmd.ExecuteReader();
+
+                dtEntreprise.Load(res);
+
+                close();
             }
             catch (MySqlException ex)
             {
@@ -186,6 +230,40 @@ namespace gestionstage.Dao
             catch (MySqlException ex)
             {
                 Console.WriteLine("Error: {0}", ex.ToString());
+            }
+        }
+
+        public static Boolean isExistSiret(string siret)
+        {
+            try
+            {
+                open();
+
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conn;
+                cmd.CommandText = "SELECT * FROM entreprises WHERE siret=" + siret;
+
+                cmd.Prepare();
+
+                cmd.ExecuteNonQuery();
+
+                MySqlDataReader res = cmd.ExecuteReader();
+
+                if (res.Read())
+                {
+                    close();
+                    return true;
+                }
+                else
+                {
+                    close();
+                    return false;
+                }
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine("Error: {0}", ex.ToString());
+                return false;
             }
         }
     }
